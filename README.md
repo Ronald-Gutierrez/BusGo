@@ -1,3 +1,5 @@
+![Logo_BusGo](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
+
 # BusGo
 ## Venta de pasajes de buses online
 ## Problematica:
