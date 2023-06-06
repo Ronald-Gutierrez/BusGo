@@ -8,6 +8,11 @@ La mayoria de estas empresas mantienen sus areas de ventas en los mismos estable
 El transporte va en constante crecimiento al ritmo del aumento de la población, lo cual cada año se incrementan nuevas empresas de transporte que solo se encargan de tener su propia gestion y administracion de venta de pasajes de una manera primitiva.
 Nuestro proyecto está originalmente pensado para brindar la administracion y base de datos de venta de pasajes a empresas pequeñas que desconocen este tipo de gestion de forma digital, pretendemos ayudar sin fines de lucro, para poder ir mejorando el proyecto.
 
+##Aplicaciones Similares:
+- [Recorrido.pe](https://www.recorrido.pe/es).
+- [Redbus](https://www.redbus.pe/).
+- [Checkmybus](https://www.checkmybus.pe/).
+- [Busbud](https://www.busbud.com/es).
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
