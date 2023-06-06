@@ -46,7 +46,7 @@ Nuestro proyecto está originalmente pensado para brindar la administracion y ba
 
 ### Diagrama de Casos de Uso
 
-
+![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso.jpg)
 
 ### Diseño de Modelo de Datos 
 
