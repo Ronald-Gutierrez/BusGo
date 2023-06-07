@@ -1,24 +1,24 @@
+
 ![Logo_BusGo](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
 
-# BusGo
-## Venta de pasajes de buses online
+<h1 align="center">BUSGO</h1>
+<h1 align="center">Venta de pasajes de buses online</h1>
+
 ## Problematica:
 Actualmente las empresas de transporte interprovinciales son grandes corporaciones que brindan servicios a la población; para la comodidad de los clientes, estas empresas fueron innnovando y adaptandose al cambio digital. 
 La mayoria de estas empresas mantienen sus areas de ventas en los mismos establecimientos de transporte, incluso cuentan con sus propios sitios web que son constantemente mantenidos por profesionales. 
 El transporte va en constante crecimiento al ritmo del aumento de la población, lo cual cada año se incrementan nuevas empresas de transporte que solo se encargan de tener su propia gestion y administracion de venta de pasajes de una manera primitiva.
 Nuestro proyecto está originalmente pensado para brindar la administracion y base de datos de venta de pasajes a empresas pequeñas que desconocen este tipo de gestion de forma digital, pretendemos ayudar sin fines de lucro, para poder ir mejorando el proyecto.
 
-##Aplicaciones Similares:
+## :label: Aplicaciones Similares:
 - [Recorrido.pe](https://www.recorrido.pe/es).
 - [Redbus](https://www.redbus.pe/).
 - [Checkmybus](https://www.checkmybus.pe/).
 - [Busbud](https://www.busbud.com/es).
 
+## :label: Propósito del Proyecto
 
-
-
-## label: Propósito del Proyecto
- BusGO busca proporcionar una solución eficiente y conveniente para la compra de boletos de autobús, simplificando el proceso tanto para los usuarios como para las compañías de autobuses. En este contexto tambien el software tiene como posibles metas:<br>
+BusGO busca proporcionar una solución eficiente y conveniente para la compra de boletos de autobús, simplificando el proceso tanto para los usuarios como para las compañías de autobuses. En este contexto tambien el software tiene como posibles metas:<br>
  Facilitar la compra de pasajes: El software puede permitir a los usuarios buscar y reservar pasajes de autobús de manera rápida y sencilla, eliminando la necesidad de hacer filas en las taquillas de las terminales. Esto les ahorraría tiempo y brindaría comodidad al realizar sus transacciones desde cualquier lugar con acceso a Internet.
 
 **a) Mejorar la experiencia del usuario:** BusGO busca ofrecer una interfaz amigable e intuitiva, permitiendo a los usuarios encontrar rápidamente los pasajes que se ajusten a sus necesidades específicas, como horarios, destinos, precios, servicios adicionales, etc.
@@ -103,10 +103,41 @@ En pocas palabras, CRUD resume las funciones requeridas por un usuario para crea
 https://trello.com/b/Ojrdhn6C/busgo-is-lll 
 
 ### 🔩COLABORADORES🔩
+<a href="https://github.com/Ronald-Gutierrez">
+    <img src="https://avatars.githubusercontent.com/u/113565299?v=4" width="50px">
+</a>
+Gutierrez Arratia Ronald Romario
+<br>
+<a href="https://github.com/AlbertLlica">
+    <img src="https://avatars.githubusercontent.com/u/82473627?v=4" width="50px">
+</a>
+Llica Alvarez Albert Daniel
+<br>
+<a href="https://github.com/Erick-Perez12a">
+    <img src="https://avatars.githubusercontent.com/u/82849144?v=4" width="50px">
+</a>
+Perez Chipa Erick Jesús 
+<br>
+<a href="https://github.com/JhenMa">
+    <img src="https://avatars.githubusercontent.com/u/71655718?v=4" width="50px">
+</a>
+Alvarez Astete Jheremy Manuel
+<br>
+<a href="https://github.com/UbertoGC">
+    <img src="https://avatars.githubusercontent.com/u/84751424?v=4" width="50px">
+</a>
+Garcia Caceres Uberto 
+<br>
+<a href="https://github.com/MarkoMarcelo">
+    <img src="https://avatars.githubusercontent.com/u/83055437?v=4" width="50px">
+</a>
+Ituccayasi Umeres Marko Marcelo 
+<br>
 
-- [x] Erick Jesús Perez Chipa
-- [x] Jheremy Manuel Alvarez Astete
-- [x] Ronald Gutierrez Arratia 
-- [x] Uberto Garcia Caceres
-- [x] Marko Marcelo Ituccayasi Umeres
-- [x] Albert Daniel Llica Alvarez
+### Licencia de Laravel
+
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+
