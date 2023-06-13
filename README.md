@@ -82,29 +82,37 @@ EL proyecto busca tener una interfaz amigable y confiable para los clientes, a t
 La realizacion del proyecto es de forma progresiva por la que los mockups seran una guia final o expectativa.
 
 ### Avance del proyecto
-Pagina de Inicio
+###Pagina de Inicio
+
 ![home_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/da09a5e2-72ac-4fe8-a28e-0ed637edd815)
 
-Pagina para el inicio de sesion
+###Pagina para el inicio de sesion
+
 ![Login_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/f161987e-dd64-4a1e-ad77-c4ba6a563eff)
 
-Pagina para el registro
+###Pagina para el registro
+
 ![Register_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/c8865dc9-a829-41a8-87fc-3232be55fccf)
 
-###Mockups(Figma)
-Pagina de inicio
+##Mockups(Figma)
+
+###Pagina de inicio
+
 ![home](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/1734e837-8a3e-4bde-9936-4d01190c9d58)
 
-Pagina de Inicio de sesion
+###Pagina de Inicio de sesion
+
 ![Login](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/db3c2d85-0cbf-4c25-8a68-d592eb4833be)
 
-Pagina de registro
+###Pagina de registro
+
 ![Register](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/68227d04-78a0-4c56-aec4-96746ad4357b)
 
 Pagina de seleccion de destinos
 ![Destino_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/58287608-4efc-42ee-ac65-d89493160ec9)
 
-Pagina de reserva de asiento
+###Pagina de reserva de asiento
+
 ![reserva_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/20309391-99a1-48fe-a481-332fc0e0502d)
 
 # **Estilos de Programación**
