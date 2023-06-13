@@ -93,137 +93,137 @@ Se escribio los requisitos específicos de BusGO en el siguiente documento, el c
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="517" y="642" name="Usuario">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="contraseña" null="1" autoincrement="0">
-<datatype>VARCHAR(30)</datatype>
-<default>NULL</default></row>
-<row name="nombre" null="1" autoincrement="0">
-<datatype>VARCHAR(30)</datatype>
-<default>NULL</default></row>
-<row name="correo" null="1" autoincrement="0">
-<datatype>VARCHAR(30)</datatype>
-<default>NULL</default></row>
-<row name="telefono" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="644" y="434" name="cliente">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Usuario" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="690" y="782" name="Empresa">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Usuario" row="id" />
-</row>
-<row name="direccion" null="1" autoincrement="0">
-<datatype>VARCHAR(30)</datatype>
-<default>NULL</default></row>
-<row name="RUC" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="927" y="767" name="ruta">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="id_empresa" null="0" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Empresa" row="id" />
-</row>
-<row name="origen" null="1" autoincrement="0">
-<datatype>VARCHAR(30)</datatype>
-<default>NULL</default></row>
-<row name="destino" null="1" autoincrement="0">
-<datatype>VARCHAR(30)</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-<key type="INDEX" name="">
-<part>id_empresa</part>
-</key>
-</table>
-<table x="890" y="401" name="reserva">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="cliente" row="id" />
-</row>
-<row name="num_asiento" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="1104" y="504" name="Viaje">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="fecha_inicio" null="1" autoincrement="0">
-<datatype>DATE</datatype>
-<default>NULL</default></row>
-<row name="fecha_retorno" null="1" autoincrement="0">
-<datatype>DATE</datatype>
-<default>NULL</default></row>
-<row name="estado" null="1" autoincrement="0">
-<datatype>CHAR</datatype>
-<default>NULL</default></row>
-<row name="id_reserva" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="reserva" row="id" />
-</row>
-<row name="id_ruta" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="ruta" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-<key type="INDEX" name="">
-<part>id_reserva</part>
-<part>id_ruta</part>
-</key>
-</table>
-<table x="1275" y="537" name="bus">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="num_nbus" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="capacidad" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="estado" null="1" autoincrement="0">
-<datatype>CHAR</datatype>
-<default>NULL</default></row>
-<row name="id_viaje" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Viaje" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-<key type="INDEX" name="">
-<part>id_viaje</part>
-</key>
-</table>
-</sql>
+    </datatypes><table x="517" y="642" name="Usuario">
+    <row name="id" null="1" autoincrement="1">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <row name="contraseña" null="1" autoincrement="0">
+    <datatype>VARCHAR(30)</datatype>
+    <default>NULL</default></row>
+    <row name="nombre" null="1" autoincrement="0">
+    <datatype>VARCHAR(30)</datatype>
+    <default>NULL</default></row>
+    <row name="correo" null="1" autoincrement="0">
+    <datatype>VARCHAR(30)</datatype>
+    <default>NULL</default></row>
+    <row name="telefono" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <key type="PRIMARY" name="">
+    <part>id</part>
+    </key>
+    </table>
+    <table x="644" y="434" name="cliente">
+    <row name="id" null="1" autoincrement="1">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default><relation table="Usuario" row="id" />
+    </row>
+    <key type="PRIMARY" name="">
+    <part>id</part>
+    </key>
+    </table>
+    <table x="690" y="782" name="Empresa">
+    <row name="id" null="1" autoincrement="1">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default><relation table="Usuario" row="id" />
+    </row>
+    <row name="direccion" null="1" autoincrement="0">
+    <datatype>VARCHAR(30)</datatype>
+    <default>NULL</default></row>
+    <row name="RUC" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <key type="PRIMARY" name="">
+    <part>id</part>
+    </key>
+    </table>
+    <table x="927" y="767" name="ruta">
+    <row name="id" null="1" autoincrement="1">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <row name="id_empresa" null="0" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default><relation table="Empresa" row="id" />
+    </row>
+    <row name="origen" null="1" autoincrement="0">
+    <datatype>VARCHAR(30)</datatype>
+    <default>NULL</default></row>
+    <row name="destino" null="1" autoincrement="0">
+    <datatype>VARCHAR(30)</datatype>
+    <default>NULL</default></row>
+    <key type="PRIMARY" name="">
+    <part>id</part>
+    </key>
+    <key type="INDEX" name="">
+    <part>id_empresa</part>
+    </key>
+    </table>
+    <table x="890" y="401" name="reserva">
+    <row name="id" null="1" autoincrement="1">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default><relation table="cliente" row="id" />
+    </row>
+    <row name="num_asiento" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <key type="PRIMARY" name="">
+    <part>id</part>
+    </key>
+    </table>
+    <table x="1104" y="504" name="Viaje">
+    <row name="id" null="1" autoincrement="1">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <row name="fecha_inicio" null="1" autoincrement="0">
+    <datatype>DATE</datatype>
+    <default>NULL</default></row>
+    <row name="fecha_retorno" null="1" autoincrement="0">
+    <datatype>DATE</datatype>
+    <default>NULL</default></row>
+    <row name="estado" null="1" autoincrement="0">
+    <datatype>CHAR</datatype>
+    <default>NULL</default></row>
+    <row name="id_reserva" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default><relation table="reserva" row="id" />
+    </row>
+    <row name="id_ruta" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default><relation table="ruta" row="id" />
+    </row>
+    <key type="PRIMARY" name="">
+    <part>id</part>
+    </key>
+    <key type="INDEX" name="">
+    <part>id_reserva</part>
+    <part>id_ruta</part>
+    </key>
+    </table>
+    <table x="1275" y="537" name="bus">
+    <row name="id" null="1" autoincrement="1">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <row name="num_nbus" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <row name="capacidad" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default></row>
+    <row name="estado" null="1" autoincrement="0">
+    <datatype>CHAR</datatype>
+    <default>NULL</default></row>
+    <row name="id_viaje" null="1" autoincrement="0">
+    <datatype>INTEGER</datatype>
+    <default>NULL</default><relation table="Viaje" row="id" />
+    </row>
+    <key type="PRIMARY" name="">
+    <part>id</part>
+    </key>
+    <key type="INDEX" name="">
+    <part>id_viaje</part>
+    </key>
+    </table>
+    </sql>
 
 ### Diagrama de Casos de Uso
 
