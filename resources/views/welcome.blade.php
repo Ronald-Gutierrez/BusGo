@@ -110,7 +110,6 @@
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                    
                         <img src="{{ asset('img/busGo.png') }}" alt="Phone" class="h-48 w-auto mx-auto">
                     </div>
                     <div>
