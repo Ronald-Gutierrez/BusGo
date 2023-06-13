@@ -54,6 +54,25 @@ Se escribio los requisitos específicos de BusGO en el siguiente documento, el c
 
 ![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso_v2.jpg)
 
+### Arquitectura
+
+<p align="center">
+  <img src="https://www.freecodecamp.org/espanol/news/content/images/2021/06/MVC3.png" width="500" high="500">
+</p>
+
+La arquitectura Modelo-Vista-Controlador (MVC) es un patrón de diseño ampliamente utilizado en el desarrollo web. En este proyecto, seguimos el enfoque MVC utilizando el framework Laravel.
+
+#### Modelo
+
+El modelo en Laravel representa la capa de acceso a datos de la aplicación. Aquí se definen las estructuras de datos, las reglas de validación y las interacciones con la base de datos.
+
+#### Vista
+
+La vista en Laravel se encarga de la presentación de los datos al usuario. Utilizamos el motor de plantillas Blade para crear vistas dinámicas y reutilizables.
+
+#### Controlador
+
+El controlador en Laravel actúa como intermediario entre las solicitudes del usuario y la lógica de la aplicación. Los controladores se encargan de recibir las solicitudes HTTP, interactuar con los modelos y seleccionar la vista adecuada para mostrar la respuesta al usuario.
 
 
 # **Estilos de Programación**
