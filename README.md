@@ -51,6 +51,7 @@ Se escribio los requisitos específicos de BusGO en el siguiente documento, el c
 ### Modelo Logico
 
 ![ML](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MODELO_LOGICO.jpg)
+![ML2](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MODELO_LOGICO2.jpg)
 
 ### Diagrama de Casos de Uso
 
