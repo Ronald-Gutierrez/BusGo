@@ -26,8 +26,8 @@
                         <img class="h-8 w-auto" src="{{ asset('img/logo.png') }}" alt="Logo">
                     </div>
                     <div class="ml-4 text-white">
-                        <a href="#" class="font-semibold text-xl">Inicio</a>
-                        <a href="#" class="ml-4 font-semibold text-xl">Acerca de</a>
+                        <a href="{{ url('/') }}" class="font-semibold text-xl">Inicio</a>
+                        <a href="{{ url('/acerca') }}"class="ml-4 font-semibold text-xl">Acerca de</a>
                         <a href="#" class="ml-4 font-semibold text-xl">Contacto</a>
                     </div>
                 </div>
@@ -110,7 +110,6 @@
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                    
                         <img src="{{ asset('img/busGo.png') }}" alt="Phone" class="h-48 w-auto mx-auto">
                     </div>
                     <div>
