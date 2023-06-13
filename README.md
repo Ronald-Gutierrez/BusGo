@@ -42,7 +42,7 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 ## :red_circle: Desarrollo
 
 ### Funcionalidades
-Se escribio los requisitos específicos de BusGO en el siguiente documento, el cual posee los requisitos funcionales(RF) y los requisitos no funcionales(RNF) de este proyecto. [Documentación Requisitos Específicos BusGO]([https://pages.github.com/](https://docs.google.com/document/d/1-cylmJXhp7sCNWUJFx0uLShQl1hN8ZKIwFM0lp-MjKM/edit).
+Se escribio los requisitos específicos de BusGO en el siguiente documento, el cual posee los requisitos funcionales(RF) y los requisitos no funcionales(RNF) de este proyecto. [Documentación Requisitos Específicos BusGO](https://docs.google.com/document/d/1-cylmJXhp7sCNWUJFx0uLShQl1hN8ZKIwFM0lp-MjKM/edit).
 
 ### Modelo Entidad Relación
 
