@@ -2,7 +2,7 @@
 ![Logo_BusGo](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
 
 <h1 align="center">BUSGO</h1>
-<h1 align="center">Venta de pasajes de buses online</h1>
+<h1 align="center">Reserva de pasajes de buses online</h1>
 
 ## Problematica:
 Actualmente las empresas de transporte interprovinciales son grandes corporaciones que brindan servicios a la población; para la comodidad de los clientes, estas empresas fueron innnovando y adaptandose al cambio digital. 
@@ -42,16 +42,39 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 ## :red_circle: Desarrollo
 
 ### Funcionalidades
+Se escribio los requisitos específicos de BusGO en el siguiente documento, el cual posee los requisitos funcionales(RF) y los requisitos no funcionales(RNF) de este proyecto. [Documentación Requisitos Específicos BusGO](https://docs.google.com/document/d/1-cylmJXhp7sCNWUJFx0uLShQl1hN8ZKIwFM0lp-MjKM/edit).
 
+### Modelo Entidad Relación
+
+![MER](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MER_busgo.jpg)
+
+### Modelo Logico
+
+![ML](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MODELO_LOGICO.jpg)
 
 ### Diagrama de Casos de Uso
 
-![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso.jpg)
+![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso_v2.jpg)
 
-### Diseño de Modelo de Datos 
+### Arquitectura
 
+<p align="center">
+  <img src="https://www.freecodecamp.org/espanol/news/content/images/2021/06/MVC3.png" width="500" high="500">
+</p>
 
-### Diseño de Arquitectura
+La arquitectura Modelo-Vista-Controlador (MVC) es un patrón de diseño ampliamente utilizado en el desarrollo web. En este proyecto, seguimos el enfoque MVC utilizando el framework Laravel.
+
+#### Modelo
+
+El modelo en Laravel representa la capa de acceso a datos de la aplicación. Aquí se definen las estructuras de datos, las reglas de validación y las interacciones con la base de datos.
+
+#### Vista
+
+La vista en Laravel se encarga de la presentación de los datos al usuario. Utilizamos el motor de plantillas Blade para crear vistas dinámicas y reutilizables.
+
+#### Controlador
+
+El controlador en Laravel actúa como intermediario entre las solicitudes del usuario y la lógica de la aplicación. Los controladores se encargan de recibir las solicitudes HTTP, interactuar con los modelos y seleccionar la vista adecuada para mostrar la respuesta al usuario.
 
 
 
