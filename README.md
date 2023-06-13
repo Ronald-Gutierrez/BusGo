@@ -43,6 +43,11 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 
 ### Funcionalidades
 
+### Modelo Entidad Relación
+
+![MER](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MER_busgo.jpg)
+
+### Modelo Logico
 
 ### Diagrama de Casos de Uso
 
