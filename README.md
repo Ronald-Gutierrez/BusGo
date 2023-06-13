@@ -52,12 +52,8 @@ Se escribio los requisitos específicos de BusGO en el siguiente documento, el c
 
 ### Diagrama de Casos de Uso
 
-![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso.jpg)
+![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso_v2.jpg)
 
-### Diseño de Modelo de Datos 
-
-
-### Diseño de Arquitectura
 
 
 # **Estilos de Programación**
