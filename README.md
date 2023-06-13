@@ -54,6 +54,9 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 ### Diseño de Arquitectura
 
 
+
+
+
 # **Estilos de Programación**
 
 ## 1. Declared-Intentions.
