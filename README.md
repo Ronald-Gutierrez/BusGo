@@ -2,7 +2,7 @@
 ![Logo_BusGo](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
 
 <h1 align="center">BUSGO</h1>
-<h1 align="center">Venta de pasajes de buses online</h1>
+<h1 align="center">Reserva de pasajes de buses online</h1>
 
 ## Problematica:
 Actualmente las empresas de transporte interprovinciales son grandes corporaciones que brindan servicios a la población; para la comodidad de los clientes, estas empresas fueron innnovando y adaptandose al cambio digital. 
