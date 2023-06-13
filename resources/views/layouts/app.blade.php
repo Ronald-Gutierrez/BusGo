@@ -45,7 +45,7 @@
                     </div>
                     <div class="ml-4 text-white">
                         <a href="{{ url('/') }}" class="font-semibold text-xl">Inicio</a>
-                        <a href="#" class="ml-4 font-semibold text-xl">Acerca de</a>
+                        <a href="{{ url('/acerca') }}" class="ml-4 font-semibold text-xl">Acerca de</a>
                         <a href="#" class="ml-4 font-semibold text-xl">Contacto</a>
                     </div>
                 </div>
