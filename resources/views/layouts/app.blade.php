@@ -50,19 +50,41 @@
                     </div>
                 </div>
                 <div class="flex items-center">
-                    @if (Route::has('login'))
-                        <div class="ml-4 text-white">
-                            @auth
-                                <a href="{{ url('/home') }}" class="font-semibold text-xl">Home</a>
-                            @else
-                                <a href="{{ route('login') }}" class="font-semibold text-xl">Ingresar</a>
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                            <div class="ml-4 text-white">
+                                @auth
+                                    <a href="{{ url('/home') }}" class="font-semibold text-xl">Home</a>
+                                    
+                                @else
+                                    <a href="{{ route('login') }}" class="font-semibold text-xl">Ingresar</a>
 
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="ml-4 font-semibold text-xl">Registrate</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-xl">Registrate</a>
+                                    @endif                        
+                                @endauth
+                            </div>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" style="color: white;" class=" ml-4 font-semibold text-xl nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
                 </div>
             </div>
         </div>
