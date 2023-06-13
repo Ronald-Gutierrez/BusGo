@@ -94,7 +94,7 @@ Pagina para el registro
 
 ![Register_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/c8865dc9-a829-41a8-87fc-3232be55fccf)
 
-##Mockups(Figma)
+MOCKUPS(Figma)
 
 Pagina de inicio
 
