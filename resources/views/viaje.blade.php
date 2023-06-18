@@ -6,68 +6,84 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Bus</title>
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/script.js') }}"></script>
     </head>
-
+    
     <body>
-        <div class="bus-container">
+    <div class="container justify-content-center">
+        <div class="d-flex mb-5">
+            <div class="btn-tab arrow arrow-color">
+                <div>Elige tu asiento</div>
+            </div>
+            <div class="btn-tab arrow">
+                <div>Llena tus datos</div>
+            </div>
+            <div class="btn-tab arrow">
+                <div>Confirma tu reserva</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bus-container">
         <!-- Primera columna -->
         <div class="column">
-                <buttom class="row">
-                    <buttom class="seat">1</buttom>
-                </buttom>
+            <div class="row">
+                <buttom class="seat" data-price="10">22</buttom>
+            </div>
 
-                <buttom class="row">
-                    <buttom class="seat">5</buttom>
-                </buttom>
+            <div class="row">
+                <buttom class="seat">5</buttom>
+            </div>
 
-                <buttom class="row">
-                    <buttom class="seat">9</buttom>
-                </buttom>
+            <div class="row">
+                <buttom class="seat">9</buttom>
+            </div>
 
-                <buttom class="row">
-                    <buttom class="seat">11</buttom>
-                </buttom>
+            <div class="row">
+                <buttom class="seat">11</buttom>
+            </div>
 
-                <buttom class="row">
-                    <buttom class="seat">15</buttom>
-                </buttom>
+            <div class="row">
+                <buttom class="seat">15</buttom>
+            </div>
 
-                <buttom class="row">
-                    <buttom class="seat">19</buttom>
-                </buttom>
+            <div class="row">
+                <buttom class="seat">19</buttom>
+            </div>
 
-                <buttom class="row">
-                    <buttom class="seat">23</buttom>
-                </buttom>
+            <div class="row">
+                <buttom class="seat">23</buttom>
+            </div>
         </div>
         <!-- Segunda columna -->
         <div class="column">
             <div class="row">
-            <div class="seat">2</div>
+                <button class="seat">23</button>
             </div>
             <div class="row">
-            <div class="seat">6</div>
+                <button class="seat">23</button>
             </div>
             <div class="row">
-            <div class="seat">10</div>
+                <button class="seat">23</button>
             </div>
             <div class="row">
-            <div class="seat">12</div>
+                <button class="seat">23</button>
             </div>
             <div class="row">
-            <div class="seat">16</div>
+                <button class="seat">23</button>
             </div>
             <div class="row">
-            <div class="seat">20</div>
+                <button class="seat">23</button>
             </div>
             <div class="row">
-            <div class="seat">24</div>
+                <button class="seat">23</button>
             </div>
         </div>
             <!-- Tercera columna -->
         <div class="column">
             <div class="row">
-                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="baño" >
+                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
             </div>
 
             <div class="row">
@@ -79,70 +95,280 @@
             </div>
 
             <div class="row">
-                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}">
+                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
             </div>
 
 
         </div>
         <!-- cuarta columna -->
         <div class="column">
-            <div class="row">
-                <div class="seat">1</div>
+        <div class="row">
+                <button class="seat">23</button>
             </div>
 
             <div class="row">
-                <div class="seat">5</div>
+                <button class="seat">23</button>
             </div>
 
             <div class="row">
-                <div class="seat">9</div>
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
             </div>
 
             <div class="row">
-                <div class="seat">11</div>
+                <img class="h-8 w-auto" src="{{ asset('img/svg/baño.svg') }}" alt="baño" >
             </div>
 
             <div class="row">
-                <div class="seat">19</div>
+                <button class="seat">23</button>
             </div>
 
             <div class="row">
-                <div class="seat">19</div>
-            </div>
-
-            <div class="row">
-                <div class="seat">23</div>
+                <button class="seat">23</button>
             </div>
         </div>
         <!-- quinta columna -->
 
         <div class="column">
             <div class="row">
-                <div class="seat">1</div>
+                <button class="seat" id="empty-seat"></button>
             </div>
 
             <div class="row">
-                <div class="seat">5</div>
+                <button class="seat" id="empty-seat"></button>
             </div>
 
             <div class="row">
-                <div class="seat">9</div>
+                <button class="seat" id="empty-seat"></button>
             </div>
 
             <div class="row">
-                <div class="seat">11</div>
+                <button class="seat" id="empty-seat"></button>
             </div>
 
             <div class="row">
-                <div class="seat">15</div>
+                <button class="seat" id="empty-seat"></button>
             </div>
 
             <div class="row">
-                <div class="seat">19</div>
+                <button class="seat" id="empty-seat"></button>
             </div>
 
             <div class="row">
-                <div class="seat">23</div>
+                <button class="seat" id="empty-seat"></button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+        </div>
+            <!-- Tercera columna -->
+            <div class="column">
+            <div class="row">
+                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
+            </div>
+
+            <div class="row">
+                <button class="seat" id="empty-seat"></button>
+            </div>
+
+            <div class="row">
+                <button class="seat" id="empty-seat"></button>
+            </div>
+
+            <div class="row">
+                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
+            </div>
+            <div class="row">
+                <button class="seat" id="empty-seat"></button>
+            </div>
+            <div class="row">
+                <button class="seat" id="empty-seat"></button>
+            </div>
+            
+            <div class="row">
+                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
+            </div>
+            <div class="row">
+                <button class="seat" id="empty-seat"></button>
+            </div>
+            <div class="row">
+                <button class="seat" id="empty-seat"></button>
+            </div>
+            <div class="row">
+                <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">5</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">9</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">11</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">15</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">19</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <button class="seat">1</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">5</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">9</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">11</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">15</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">19</button>
+            </div>
+
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
+            </div>
+            <div class="row">
+                <button class="seat">23</button>
             </div>
         </div>
     </body>
