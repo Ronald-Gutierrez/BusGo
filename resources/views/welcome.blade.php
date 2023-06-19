@@ -28,7 +28,7 @@
                     <div class="ml-4 text-white">
                         <a href="{{ url('/') }}" class="font-semibold text-xl">Inicio</a>
                         <a href="{{ url('/acerca') }}"class="ml-4 font-semibold text-xl">Acerca de</a>
-                        <a href="#" class="ml-4 font-semibold text-xl">Contacto</a>
+                        <a href="{{ url('/soporte') }}" class="ml-4 font-semibold text-xl">Soporte</a>
                     </div>
                 </div>
                 <div class="flex items-center">

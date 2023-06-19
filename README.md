@@ -2,7 +2,7 @@
 ![Logo_BusGo](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
 
 <h1 align="center">BUSGO</h1>
-<h1 align="center">Venta de pasajes de buses online</h1>
+<h1 align="center">Reserva de pasajes de buses online</h1>
 
 ## Problematica:
 Actualmente las empresas de transporte interprovinciales son grandes corporaciones que brindan servicios a la población; para la comodidad de los clientes, estas empresas fueron innnovando y adaptandose al cambio digital. 
@@ -42,17 +42,79 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 ## :red_circle: Desarrollo
 
 ### Funcionalidades
+Se escribio los requisitos específicos de BusGO en el siguiente documento, el cual posee los requisitos funcionales(RF) y los requisitos no funcionales(RNF) de este proyecto. [Documentación Requisitos Específicos BusGO](https://docs.google.com/document/d/1-cylmJXhp7sCNWUJFx0uLShQl1hN8ZKIwFM0lp-MjKM/edit).
 
+### Modelo Entidad Relación
+
+![MER](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MER_busgo.jpg)
+
+### Modelo Logico
+
+![ML](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MODELO_LOGICO.jpg)
+![ML2](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/MODELO_LOGICO2.jpg)
 
 ### Diagrama de Casos de Uso
 
-![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso.jpg)
+![Casos_Uso](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/Diagrama_Casos_Uso_v2.jpg)
 
-### Diseño de Modelo de Datos 
+### Arquitectura
 
+<p align="center">
+  <img src="https://www.freecodecamp.org/espanol/news/content/images/2021/06/MVC3.png" width="500" high="500">
+</p>
 
-### Diseño de Arquitectura
+La arquitectura Modelo-Vista-Controlador (MVC) es un patrón de diseño ampliamente utilizado en el desarrollo web. En este proyecto, seguimos el enfoque MVC utilizando el framework Laravel.
 
+#### Modelo
+
+El modelo en Laravel representa la capa de acceso a datos de la aplicación. Aquí se definen las estructuras de datos, las reglas de validación y las interacciones con la base de datos.
+
+#### Vista
+
+La vista en Laravel se encarga de la presentación de los datos al usuario. Utilizamos el motor de plantillas Blade para crear vistas dinámicas y reutilizables.
+
+#### Controlador
+
+El controlador en Laravel actúa como intermediario entre las solicitudes del usuario y la lógica de la aplicación. Los controladores se encargan de recibir las solicitudes HTTP, interactuar con los modelos y seleccionar la vista adecuada para mostrar la respuesta al usuario.
+
+## Mockups
+
+EL proyecto busca tener una interfaz amigable y confiable para los clientes, a traves de mockups buscamos diseñar la parte visual del proyecto.
+La realizacion del proyecto es de forma progresiva por la que los mockups seran una guia final o expectativa.
+
+### Avance del proyecto
+Pagina de Inicio
+
+![home_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/da09a5e2-72ac-4fe8-a28e-0ed637edd815)
+
+Pagina para el inicio de sesion
+
+![Login_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/f161987e-dd64-4a1e-ad77-c4ba6a563eff)
+
+Pagina para el registro
+
+![Register_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/c8865dc9-a829-41a8-87fc-3232be55fccf)
+
+MOCKUPS(Figma)
+
+Pagina de inicio
+
+![home](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/1734e837-8a3e-4bde-9936-4d01190c9d58)
+
+Pagina de Inicio de sesion
+
+![Login](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/db3c2d85-0cbf-4c25-8a68-d592eb4833be)
+
+Pagina de registro
+
+![Register](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/68227d04-78a0-4c56-aec4-96746ad4357b)
+
+Pagina de seleccion de destinos
+![Destino_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/58287608-4efc-42ee-ac65-d89493160ec9)
+
+Pagina de reserva de asiento
+
+![reserva_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/20309391-99a1-48fe-a481-332fc0e0502d)
 
 # **Estilos de Programación**
 

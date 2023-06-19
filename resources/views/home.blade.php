@@ -11,6 +11,8 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
         <!-- Styles -->
         <style>
             /* Estilos de Tailwind CSS */
@@ -74,5 +76,26 @@
             </div>
         </div>
     </div>
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold text-center mt-8">Viajes disponibles</h1>
+        <div class="flex flex-col mt-8">
+            <div class="bg-gray-200 p-4 mb-4 rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+                <div>
+                <h2 class="text-xl font-bold">Lima - Tacna</h2>
+                <p class="text-gray-600">21 de junio de 2023</p>
+                </div>
+                <p class="text-2xl font-bold">S/ 100.00</p>
+            </div>
+            <a href="{{ url('/viaje') }}" class="block mt-4 px-6 py-2 bg-blue-500 text-white font-bold rounded-lg text-center">Seleccionar</a>
+            </div>
+            
+            <!-- Repite el bloque anterior para cada viaje disponible -->
+        </div>
+    </div>
 
+    <div class="footer">
+        <p>© 2023 - Todos los derechos reservados</p>
+    </div>
 @endsection
+
