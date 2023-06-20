@@ -38,7 +38,16 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <!--
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <input type="radio" id="business" name="tipocuenta" value="business">
+                                <label for="business">Empresa</label>
+                                <input type="radio" id="user" name="tipocuenta" value="user">
+                                <label for="business">Usuario</label>
+                            </div>
+                        </div>
+                        -->
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
