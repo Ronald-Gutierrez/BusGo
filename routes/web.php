@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeBusinessController;
-use App\Http\Controllers\HomeAdminBusinessController;
 use App\Http\Controllers\AcercaController;
 use App\Http\Controllers\SoporteController;
 use App\Http\Controllers\ViajeController;
@@ -15,7 +14,6 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/homebusiness', [HomeBusinessController::class, 'index'])->name('homebusiness');
-Route::get('/homeadminbusiness', [HomeAdminBusinessController::class, 'index'])->name('homeadminbusiness');
 
 Route::get('/admin/dashboard', [AdminHomeController::class, 'index'])->name('admin.dashboard');
 Route::get('/client/dashboard', [ClientHomeController::class, 'index'])->name('client.dashboard');
