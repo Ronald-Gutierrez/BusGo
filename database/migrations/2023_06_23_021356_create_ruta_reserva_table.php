@@ -1,0 +1,56 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('ruta', function (Blueprint $table) {
+            $table->id('id_ruta');
+            $table->string('origen',30);
+            $table->string('destino',30);
+            $table->unsignedBigInteger('encargado');
+            $table->foreign('encargado')->references('id_usuario')->on('business');
+        });
+        Schema::create('viaje', function (Blueprint $table) {
+            $table->id('id_viaje');
+            $table->date('fecha_inicio');
+            $table->date('fecha_retorno');
+            $table->unsignedTinyInteger('estado');
+            $table->unsignedBigInteger('id_ruta');
+            $table->foreign('id_ruta')->references('id_ruta')->on('ruta');
+        });
+        Schema::create('reserva', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_cliente');
+            $table->integer('num_asiento');
+            $table->unsignedBigInteger('id_viaje');
+            $table->foreign('id_cliente')->references('id_usuario')->on('cliente');
+            $table->foreign('id_viaje')->references('id_viaje')->on('viaje');
+        });
+        Schema::create('bus', function (Blueprint $table) {
+            $table->id('id_bus');
+            $table->integer('num_bus');
+            $table->integer('capacidad');
+            $table->unsignedTinyInteger('estado');
+            $table->unsignedBigInteger('id_viaje');
+            $table->foreign('id_viaje')->references('id_viaje')->on('viaje');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('bus');
+        Schema::dropIfExists('reserva');
+        Schema::dropIfExists('viaje');
+        Schema::dropIfExists('ruta');
+    }
+};
