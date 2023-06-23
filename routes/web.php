@@ -12,7 +12,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::get('/homebusiness', [HomeController::class, 'index_business'])->name('homebusiness');
 
 Route::get('/admin/dashboard', [AdminHomeController::class, 'index'])->name('admin.dashboard');
 Route::get('/client/dashboard', [ClientHomeController::class, 'index'])->name('client.dashboard');
