@@ -80,8 +80,33 @@
             </div>
         </div>
     </div>
+
+
+    <div class="bg-gray-100 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+            
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+                    <div>
+                        <button class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Añadir viaje</button>
+                    </div>
+                    <div>
+                        <button class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Eliminar viaje</button>
+                    </div>
+                    <div>
+                        <button class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Modificar viaje</button>
+                    </div>
+
+                
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <p>© 2023 - Todos los derechos reservados</p>
     </div>
+
 @endsection
 
