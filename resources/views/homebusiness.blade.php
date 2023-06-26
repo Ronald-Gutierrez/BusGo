@@ -43,21 +43,21 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>BusGo</title>
+        <title>BusGo</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
-    <style>
-        /* Estilos de Tailwind CSS */
-        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
-    </style>
-</head>
+        <!-- Styles -->
+        <style>
+            /* Estilos de Tailwind CSS */
+            @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+        </style>
+    </head>
 
     <body>
         <div id="app">
@@ -117,8 +117,24 @@
                 </div>
             </div>
         </nav>
+        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <!--Left Col-->
+            <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+            <p class="uppercase tracking-loose w-full"> Deseas Crear Rutas y Viajes</p>
+            <h1 class="my-4 text-5xl font-bold leading-tight">
+                Crea tu viaje con BusGo
+            </h1>
+            <p class="leading-normal text-2xl mb-8">
+                BusGo es una plataforma que te permite crear tus viajes como empresa.
+            </p>
+            </div>
+            <!--Right Col-->
+            <div class="w-full md:w-3/5 py-6 text-center">
+            <img class="w-full md:w-4/5 z-50" src="{{ asset('img/dashboard.png') }}" />
+            </div>
 
-
+        </div>
+    
             <main class="py-4">
                 @yield('content')
             </main>
