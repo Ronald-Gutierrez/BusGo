@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Viaje;
+use App\Models\Rutum;
 use Illuminate\Http\Request;
 
 /**
- * Class ViajeController
+ * Class RutumController
  * @package App\Http\Controllers
  */
-class ViajeController extends Controller
+class RutumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +18,10 @@ class ViajeController extends Controller
      */
     public function index()
     {
-        $viajes = Viaje::paginate();
+        $ruta = Rutum::paginate();
 
-        return view('viaje.index', compact('viajes'))
-            ->with('i', (request()->input('page', 1) - 1) * $viajes->perPage());
+        return view('rutum.index', compact('ruta'))
+            ->with('i', (request()->input('page', 1) - 1) * $ruta->perPage());
     }
 
     /**
@@ -31,8 +31,8 @@ class ViajeController extends Controller
      */
     public function create()
     {
-        $viaje = new Viaje();
-        return view('viaje.create', compact('viaje'));
+        $rutum = new Rutum();
+        return view('rutum.create', compact('rutum'));
     }
 
     /**
@@ -43,12 +43,12 @@ class ViajeController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Viaje::$rules);
+        request()->validate(Rutum::$rules);
 
-        $viaje = Viaje::create($request->all());
+        $rutum = Rutum::create($request->all());
 
-        return redirect()->route('viajes.index')
-            ->with('success', 'Viaje created successfully.');
+        return redirect()->route('ruta.index')
+            ->with('success', 'Rutum created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class ViajeController extends Controller
      */
     public function show($id)
     {
-        $viaje = Viaje::find($id);
+        $rutum = Rutum::find($id);
 
-        return view('viaje.show', compact('viaje'));
+        return view('rutum.show', compact('rutum'));
     }
 
     /**
@@ -72,26 +72,26 @@ class ViajeController extends Controller
      */
     public function edit($id)
     {
-        $viaje = Viaje::find($id);
+        $rutum = Rutum::find($id);
 
-        return view('viaje.edit', compact('viaje'));
+        return view('rutum.edit', compact('rutum'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Viaje $viaje
+     * @param  Rutum $rutum
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Viaje $viaje)
+    public function update(Request $request, Rutum $rutum)
     {
-        request()->validate(Viaje::$rules);
+        request()->validate(Rutum::$rules);
 
-        $viaje->update($request->all());
+        $rutum->update($request->all());
 
-        return redirect()->route('viajes.index')
-            ->with('success', 'Viaje updated successfully');
+        return redirect()->route('ruta.index')
+            ->with('success', 'Rutum updated successfully');
     }
 
     /**
@@ -101,9 +101,9 @@ class ViajeController extends Controller
      */
     public function destroy($id)
     {
-        $viaje = Viaje::find($id)->delete();
+        $rutum = Rutum::find($id)->delete();
 
-        return redirect()->route('viajes.index')
-            ->with('success', 'Viaje deleted successfully');
+        return redirect()->route('ruta.index')
+            ->with('success', 'Rutum deleted successfully');
     }
 }
