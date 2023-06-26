@@ -32,7 +32,7 @@
         @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
     </style>
 </head>
-</head>
+
 <body>
     <div id="app">
         <!-- Barra de navegación -->

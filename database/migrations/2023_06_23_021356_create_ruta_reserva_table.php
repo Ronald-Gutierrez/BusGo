@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('encargado');
             $table->foreign('encargado')->references('id_usuario')->on('business');
         });
-        Schema::create('viaje', function (Blueprint $table) {
+        Schema::create('viajes', function (Blueprint $table) {
             $table->id('id_viaje');
             $table->date('fecha_inicio');
             $table->date('fecha_retorno');
@@ -39,7 +39,7 @@ return new class extends Migration
             $table->integer('capacidad');
             $table->unsignedTinyInteger('estado');
             $table->unsignedBigInteger('id_viaje');
-            $table->foreign('id_viaje')->references('id_viaje')->on('viaje');
+            $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
         });
     }
 
@@ -50,7 +50,7 @@ return new class extends Migration
     {
         Schema::dropIfExists('bus');
         Schema::dropIfExists('reserva');
-        Schema::dropIfExists('viaje');
+        Schema::dropIfExists('viajes');
         Schema::dropIfExists('ruta');
     }
 };
