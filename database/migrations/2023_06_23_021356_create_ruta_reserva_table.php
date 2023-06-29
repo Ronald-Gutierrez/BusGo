@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('origen',30);
             $table->string('destino',30);
             $table->unsignedBigInteger('encargado');
-            $table->foreign('encargado')->references('id_usuario')->on('business');
+            $table->foreign('encargado')->references('id_usuario')->on('businesses');
         });
         Schema::create('viajes', function (Blueprint $table) {
             $table->id('id_viaje');
@@ -30,8 +30,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_cliente');
             $table->integer('num_asiento');
             $table->unsignedBigInteger('id_viaje');
-            $table->foreign('id_cliente')->references('id_usuario')->on('cliente');
-            $table->foreign('id_viaje')->references('id_viaje')->on('viaje');
+            $table->foreign('id_cliente')->references('id_usuario')->on('clientes');
+            $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
         });
         Schema::create('bus', function (Blueprint $table) {
             $table->id('id_bus');
@@ -48,9 +48,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bus');
+        Schema::dropIfExists('buses');
         Schema::dropIfExists('reserva');
         Schema::dropIfExists('viajes');
-        Schema::dropIfExists('ruta');
+        Schema::dropIfExists('rutas');
     }
 };

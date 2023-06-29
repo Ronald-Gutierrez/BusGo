@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Business;
+use App\Models\Cliente;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -23,7 +25,6 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
-
     /**
      * Where to redirect users after registration.
      *
@@ -64,10 +65,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $usuario= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        if($data['tipo_de_usuario']=='empresa'){
+            $tipo = new Business();
+            $tipo::create([
+                'id_usuario' => $usuario['id'],
+                'direccion' => $data['direccion'],
+                'RUC' => $data['ruc'],
+            ]);
+        }
+        else{
+            $tipo = new Cliente();
+            $tipo::create([
+                'id_usuario' => $usuario['id'],
+            ]);
+        }
+        return $usuario;
     }
 }

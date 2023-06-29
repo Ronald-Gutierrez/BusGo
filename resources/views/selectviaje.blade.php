@@ -29,31 +29,31 @@
         <!-- Primera columna -->
         <div class="column">
             <div class="row">
-                <buttom class="seat" data-price="10">22</buttom>
+                <button class="seat" data-price="10">22</button>
             </div>
 
             <div class="row">
-                <buttom class="seat">5</buttom>
+                <button class="seat">5</button>
             </div>
 
             <div class="row">
-                <buttom class="seat">9</buttom>
+                <button class="seat">9</button>
             </div>
 
             <div class="row">
-                <buttom class="seat">11</buttom>
+                <button class="seat">11</button>
             </div>
 
             <div class="row">
-                <buttom class="seat">15</buttom>
+                <button class="seat">15</button>
             </div>
 
             <div class="row">
-                <buttom class="seat">19</buttom>
+                <button class="seat">19</button>
             </div>
 
             <div class="row">
-                <buttom class="seat">23</buttom>
+                <button class="seat">23</button>
             </div>
         </div>
         <!-- Segunda columna -->

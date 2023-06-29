@@ -20,15 +20,19 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        Schema::create('business', function (Blueprint $table) {
+        Schema::create('businesses', function (Blueprint $table) {
             $table->id('id_usuario');
             $table->string('direccion');
             $table->integer('RUC');
             $table->foreign('id_usuario')->references('id')->on('users');
+            $table->rememberToken();
+            $table->timestamps();
         });
-        Schema::create('cliente', function(Blueprint $table){
+        Schema::create('clientes', function(Blueprint $table){
             $table->id('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
@@ -37,8 +41,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('business');
-        Schema::dropIfExists('cliente');
+        Schema::dropIfExists('businesses');
+        Schema::dropIfExists('clientes');
         Schema::dropIfExists('users');
     }
 };
