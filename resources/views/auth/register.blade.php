@@ -36,9 +36,31 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row mb-3">    
+                            <label for="tipo_de_usuario" class="col-md-4 col-form-label text-md-end">Tipo de usuario </label>
+                            <div class="col-md-6">
+                                <select class="col-md-6" name="tipo_de_usuario" id="tipo_de_usuario">
+                                    <option value="cliente">Cliente</option>
+                                    <option value="empresa">Empresa</option>
+                                </select>
                             </div>
                         </div>
-
+                        <div class="row mb-3">
+                            <label for="ruc" class="col-md-4 col-form-label text-md-end">RUC </label>
+                            <div class="col-md-6">
+                                <input id="ruc" name="ruc" type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="direccion" class="col-md-4 col-form-label text-md-end">Direccion </label>
+                            <div class="col-md-6">
+                                <input id="direccion" name="direccion" type="text" class="form-control">
+                            </div>
+                        </div>
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
