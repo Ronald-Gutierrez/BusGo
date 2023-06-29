@@ -110,7 +110,7 @@
     </nav>
 
 
-
+@section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
@@ -161,7 +161,7 @@
                                         <td>{{ $rutum->encargado }}</td>
 
                                         <td>
-                                            <form action="{{ route('ruta.destroy',$rutum->id) }}" method="POST">
+                                            <form action="{{ route('ruta.destroy',$rutum->id) }}" method="POST" class="formEliminar">
                                                 <a class="btn btn-sm btn-primary " href="{{ route('ruta.show',$rutum->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                 <a class="btn btn-sm btn-success" href="{{ route('ruta.edit',$rutum->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                 @csrf
@@ -169,6 +169,7 @@
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
                                             </form>
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>
