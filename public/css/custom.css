@@ -12,6 +12,13 @@
     align-items: flex-start; /* Alinear al lado izquierdo */
     max-width: 600px; /* Ejemplo de restricción de ancho a 800px */
 }
+.seatempty {
+    width: 30px; /* Ajusta el ancho según tus necesidades */
+    height: 30px; /* Ajusta la altura según tus necesidades */
+    background-color: #f2f2f2; /* Establece el color de fondo como blanco */
+    margin-bottom: 5px; /* Ajusta el margen inferior según tus necesidades */
+    /* Agrega cualquier otro estilo deseado para los asientos vacíos */
+}
 
 .column {
     display: grid;
@@ -127,3 +134,32 @@ color: #ffffff;
     background-color: #ff9900;
     color: #ffffff;
 }
+
+
+.container {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    align-items: flex-start; /* Alinea el contenido arriba */
+}
+
+/* Estilos para el tooltip */
+.seat[data-bs-toggle="tooltip"] {
+    position: relative;
+    cursor: pointer;
+}
+
+.seat[data-bs-toggle="tooltip"]:hover::before {
+    content: attr(data-precio);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background-color: #ff9900;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+
+
+  
