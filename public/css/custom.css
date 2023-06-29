@@ -161,5 +161,97 @@ color: #ffffff;
 }
 
 
+/* /para la leyebda del bus */
+.card-propio {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .card-propio__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .imagen-lateral {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .imagen-lateral img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .asientos-desc2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .asientos-monto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .asientos-monto p {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  
+  .button-reservar {
+    background-color: #0096c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-reservar:hover {
+    background-color: #007da9;
+  }
+  
+  .caracteristicas {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
 
   
+/* Caracteristicas css */
+
+
+.columna_caracteristica {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.columna_caracteristica > div {
+    flex-basis: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+.imagen-lateral-carac{
+    display: flex;
+    align-items: center;
+    margin: 0 -5px;
+}
+
+.imagen-lateral-carac img {
+width: 100%;
+max-width: 200px;
+height: auto;
+margin-right: 20px;
+}
