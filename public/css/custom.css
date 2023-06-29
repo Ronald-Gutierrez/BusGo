@@ -55,41 +55,12 @@
 #empty-seat-2 {
     display: none; /* Oculta los asientos vacíos */
 }
-.seat-image{
-    background-color: #ccc;
-    height: 32px; /* Altura más pequeña */
-    width: 32px; /* Ancho más pequeño */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-weight: 300; /* Fuente más delgada */
-    font-size: 20px; /* Tamaño de fuente más grande */
-    border-radius: 8px; /* Esquinas redondeadas */
-    font-family: Arial, sans-serif; /* Cambia la fuente a Arial o cualquier otra fuente */
-}
-.seat-image2{
-    
-    height: 32px; /* Altura más pequeña */
-    width: 32px; /* Ancho más pequeño */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-weight: 300; /* Fuente más delgada */
-    font-size: 20px; /* Tamaño de fuente más grande */
-
-    font-family: Arial, sans-serif; /* Cambia la fuente a Arial o cualquier otra fuente */
-}
-    
 
 /* Agrega el siguiente estilo al final del archivo custom.css */
 .seat:hover {
     background-color: #07dffc; /* Cambia el color de fondo cuando el cursor está sobre el asiento */
     cursor: pointer; /* Cambia el cursor a un puntero */
 }
-
-
 
 /* para la barra */
 .container {
@@ -135,7 +106,6 @@ color: #ffffff;
     color: #ffffff;
 }
 
-
 .container {
     display: flex;
     justify-content: flex-start; /* Alinea el contenido a la izquierda */
@@ -167,59 +137,60 @@ color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-  }
-  
-  .card-propio__title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .imagen-lateral {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .imagen-lateral img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  .asientos-desc2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .asientos-monto {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .asientos-monto p {
-    margin-right: 5px;
-    font-size: 16px;
-  }
-  
-  .button-reservar {
-    background-color: #0096c7;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button-reservar:hover {
-    background-color: #007da9;
-  }
+}
+
+.card-propio__title {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+.imagen-lateral {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.imagen-lateral img {
+width: 100%;
+max-width: 200px;
+height: auto;
+margin-right: 20px;
+}
+
+.asientos-desc2 {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.asientos-monto {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.asientos-monto p {
+margin-right: 5px;
+font-size: 16px;
+}
+
+.button-reservar {
+background-color: #0096c7;
+color: #ffffff;
+border: none;
+text-align: center;
+border-radius: 4px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.button-reservar:hover {
+background-color: #38aa64;
+}
   
   .caracteristicas {
     font-size: 16px;
@@ -255,3 +226,53 @@ max-width: 200px;
 height: auto;
 margin-right: 20px;
 }
+/* estilos de la parte de confimrar los datos */
+.cliente-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.cliente-form {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-value {
+    padding: 5px 0;
+}
+
+.form-text {
+    display: inline-block;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.terminos-condiciones {
+    margin-top: 20px;
+}
+
+.terminos-condiciones label {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.terminos-condiciones input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#terminos-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+

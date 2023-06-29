@@ -16,7 +16,7 @@
                 <div>Elige tu asiento</div>
             </div>
             <div class="btn-tab arrow">
-                <div>Llena tus datos</div>
+                <div>Confirma tus datos</div>
             </div>
             <div class="btn-tab arrow">
                 <div>Confirma tu reserva</div>
@@ -190,8 +190,9 @@
                                 <p>Asientos</p>
                                 <p id="monto">S/</p>
                             </div>
-                            <button class="button-reservar">RESERVAR</button>
+                            <a  href="{{ url('/selectviaje/confirmardatos') }}" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;" >RESERVAR</a>
                         </div>
+
                     </div>
                     <br>
                     <div class="card-propio">
