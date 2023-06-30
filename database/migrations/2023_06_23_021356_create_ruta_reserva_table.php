@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('destino',30);
             $table->unsignedBigInteger('encargado');
             $table->foreign('encargado')->references('id_usuario')->on('businesses');
+            $table->timestamps();
         });
         Schema::create('viajes', function (Blueprint $table) {
             $table->id('id_viaje');
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->unsignedTinyInteger('estado');
             $table->unsignedBigInteger('id_ruta');
             $table->foreign('id_ruta')->references('id_ruta')->on('ruta');
+            $table->timestamps();
         });
         Schema::create('reserva', function (Blueprint $table) {
             $table->unsignedBigInteger('id_cliente');
@@ -32,6 +34,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_viaje');
             $table->foreign('id_cliente')->references('id_usuario')->on('clientes');
             $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
+            $table->timestamps();
         });
         Schema::create('bus', function (Blueprint $table) {
             $table->id('id_bus');
@@ -40,6 +43,7 @@ return new class extends Migration
             $table->unsignedTinyInteger('estado');
             $table->unsignedBigInteger('id_viaje');
             $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
+            $table->timestamps();
         });
     }
 

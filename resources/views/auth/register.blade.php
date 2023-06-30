@@ -40,8 +40,8 @@
                         </div>
                         <br>
                         <br>
-                        <div class="row mb-3">    
-                            <label for="tipo_de_usuario" class="col-md-4 col-form-label text-md-end">Tipo de usuario </label>
+                        <div class="row mb-3">
+                            <label for="tipo_de_usuario" class="col-md-4 col-form-label text-md-end">Tipo de usuario</label>
                             <div class="col-md-6">
                                 <select class="col-md-6" name="tipo_de_usuario" id="tipo_de_usuario">
                                     <option value="cliente">Cliente</option>
@@ -49,12 +49,28 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <label for="ruc" class="col-md-4 col-form-label text-md-end">RUC </label>
+
+                        <div class="row mb-3" id="ruc_field" style="display: none;">
+                            <label for="ruc" class="col-md-4 col-form-label text-md-end">RUC</label>
                             <div class="col-md-6">
                                 <input id="ruc" name="ruc" type="number" class="form-control">
                             </div>
                         </div>
+
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                // Al cambiar el valor del campo "Tipo de usuario"
+                                $("#tipo_de_usuario").change(function() {
+                                    if ($(this).val() === "empresa") {
+                                        $("#ruc_field").show(); // Mostrar el campo de "RUC"
+                                    } else {
+                                        $("#ruc_field").hide(); // Ocultar el campo de "RUC"
+                                    }
+                                });
+                            });
+                        </script>
+
                         <div class="row mb-3">
                             <label for="direccion" class="col-md-4 col-form-label text-md-end">Direccion </label>
                             <div class="col-md-6">

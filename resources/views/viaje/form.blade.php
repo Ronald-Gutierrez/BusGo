@@ -8,18 +8,21 @@
         </div>
         <div class="form-group">
             {{ Form::label('fecha_inicio') }}
-            {{ Form::text('fecha_inicio', $viaje->fecha_inicio, ['class' => 'form-control' . ($errors->has('fecha_inicio') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Inicio']) }}
+            {{ Form::date('fecha_inicio', $viaje->fecha_inicio, ['class' => 'form-control' . ($errors->has('fecha_inicio') ? ' is-invalid' : ''), 'placeholder' => 'fecha_inicio']) }}
             {!! $errors->first('fecha_inicio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('fecha_retorno') }}
-            {{ Form::text('fecha_retorno', $viaje->fecha_retorno, ['class' => 'form-control' . ($errors->has('fecha_retorno') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Retorno']) }}
+            {{ Form::date('fecha_retorno', $viaje->fecha_retorno, ['class' => 'form-control' . ($errors->has('fecha_retorno') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Retorno']) }}
             {!! $errors->first('fecha_retorno', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('estado') }}
-            {{ Form::text('estado', $viaje->estado, ['class' => 'form-control' . ($errors->has('estado') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
             {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
+            <select id="estado" name="estado" class="form-control{{$errors->has('estado') ? ' is-invalid' : ''}}" >
+                <option>1</option>
+                <option>0</option>
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('id_ruta') }}

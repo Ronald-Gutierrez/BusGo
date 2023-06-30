@@ -61,7 +61,7 @@
                         <img class="h-8 w-auto" src="{{ asset('img/logo.png') }}" alt="Logo">
                     </div>
                     <div class="ml-4 text-white">
-                        <a href="{{ url('/') }}" class="font-semibold text-xl">Inicio</a>
+                        <a href="{{ url('/homebusiness') }}" class="font-semibold text-xl">Inicio</a>
                         @auth
                             <a href="{{ url('/ruta') }}" class="ml-4 font-semibold text-xl">Crear Ruta</a>
                             <a href="{{ url('/viajes') }}" class="ml-4 font-semibold text-xl">Crear Viaje</a> 
@@ -74,7 +74,7 @@
                         @if (Route::has('login'))
                             <div class="ml-4 text-white">
                                 @auth
-                                    <a href="{{ url('/home') }}" class="font-semibold text-xl">Home</a>
+                                    <a href="{{ url('/homebusiness') }}" class="font-semibold text-xl">Home</a>
                                     
                                 @else
                                     <a href="{{ route('login') }}" class="font-semibold text-xl">Ingresar</a>
@@ -110,7 +110,7 @@
     </nav>
 
 
-
+@section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
@@ -159,16 +159,18 @@
                                         <td>{{ $rutum->origen }}</td>
                                         <td>{{ $rutum->destino }}</td>
                                         <td>{{ $rutum->encargado }}</td>
-
-                                        <td>
-                                            <form action="{{ route('ruta.destroy',$rutum->id) }}" method="POST">
+                                        <!-- Esta Parte falta arreglar para hacer la eliminacion y editar y mostrar -->
+                                
+                                        {{--<td>
+                                            <form action="{{ route('ruta.destroy',$rutum->id) }}" method="POST" class="formEliminar">
                                                 <a class="btn btn-sm btn-primary " href="{{ route('ruta.show',$rutum->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                 <a class="btn btn-sm btn-success" href="{{ route('ruta.edit',$rutum->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
                                             </form>
-                                        </td>
+                                        </td>--}}
+
                                     </tr>
                                 @endforeach
                             </tbody>
