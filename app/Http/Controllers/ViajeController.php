@@ -23,6 +23,12 @@ class ViajeController extends Controller
         return view('viaje.index', compact('viajes'))
             ->with('i', (request()->input('page', 1) - 1) * $viajes->perPage());
     }
+    public function home()
+    {
+        $viajes = Viaje::all(); // Recupera todos los registros de la tabla Viaje
+
+        return view('home', compact('viajes'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -93,6 +99,7 @@ class ViajeController extends Controller
         return redirect()->route('viajes.index')
             ->with('success', 'Viaje updated successfully');
     }
+    
 
     /**
      * @param int $id
@@ -106,4 +113,5 @@ class ViajeController extends Controller
         return redirect()->route('viajes.index')
             ->with('success', 'Viaje deleted successfully');
     }
+
 }

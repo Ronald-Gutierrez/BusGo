@@ -31,3 +31,4 @@ Route::resource('/ruta', App\Http\Controllers\RutumController::class)->middlewar
 Route::resource('/viajes', App\Http\Controllers\ViajeController::class)->middleware('auth');
 Route::resource('/bus', App\Http\Controllers\BusController::class)->middleware('auth');
 
+

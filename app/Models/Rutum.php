@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Rutum extends Model
 {
-    
+    protected $primaryKey = 'id_ruta';
     static $rules = [
 		'id_ruta' => 'required',
 		'origen' => 'required',

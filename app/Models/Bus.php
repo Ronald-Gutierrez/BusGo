@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bus extends Model
 {
+    protected $primaryKey = 'id_ruta';
+
     static $rules = [
+    'id_bus' => 'required',
 		'num_bus' => 'required',
 		'capacidad' => 'required',
 		'estado' => 'required',
