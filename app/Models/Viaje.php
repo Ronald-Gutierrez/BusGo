@@ -31,7 +31,7 @@ class Viaje extends Model
     ];
 
     protected $perPage = 20;
-
+    public $timestamps = false;
     /**
      * Attributes that should be mass-assignable.
      *

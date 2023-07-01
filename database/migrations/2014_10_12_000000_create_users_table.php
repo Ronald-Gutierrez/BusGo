@@ -25,14 +25,10 @@ return new class extends Migration
             $table->string('direccion');
             $table->integer('RUC');
             $table->foreign('id_usuario')->references('id')->on('users');
-            $table->rememberToken();
-            $table->timestamps();
         });
         Schema::create('clientes', function(Blueprint $table){
             $table->id('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 
