@@ -21,4 +21,5 @@ class Cliente extends Model
     protected $fillable = [
       'id_usuario',
     ];
+    public $timestamps = false;
 }

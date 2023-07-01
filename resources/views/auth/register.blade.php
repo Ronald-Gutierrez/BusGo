@@ -56,27 +56,29 @@
                                 <input id="ruc" name="ruc" type="number" class="form-control">
                             </div>
                         </div>
-
-                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                        <script>
-                            $(document).ready(function() {
-                                // Al cambiar el valor del campo "Tipo de usuario"
-                                $("#tipo_de_usuario").change(function() {
-                                    if ($(this).val() === "empresa") {
-                                        $("#ruc_field").show(); // Mostrar el campo de "RUC"
-                                    } else {
-                                        $("#ruc_field").hide(); // Ocultar el campo de "RUC"
-                                    }
-                                });
-                            });
-                        </script>
-
-                        <div class="row mb-3">
+                        <div class="row mb-3" id="direccion_field" style="display: none;">
                             <label for="direccion" class="col-md-4 col-form-label text-md-end">Direccion </label>
                             <div class="col-md-6">
                                 <input id="direccion" name="direccion" type="text" class="form-control">
                             </div>
                         </div>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                // Al cambiar el valor del campo "Tipo de usuario"
+                                $("#tipo_de_usuario").change(function() {
+                                    if ($(this).val() !== "empresa") {
+                                        $("#ruc_field").hide();
+                                        $("#direccion_field").hide(); // Mostrar el campo de "RUC"
+                                    } else {
+                                        $("#ruc_field").show(); // Ocultar el campo de "RUC"
+                                        $("#direccion_field").show();
+                                    }
+                                });
+                            });
+                        </script>
+
+                        
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 

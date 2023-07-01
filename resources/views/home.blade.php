@@ -28,7 +28,7 @@
     <div class="bg-gray-100 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-lg shadow-lg p-6">
-                <form action="#" method="POST" class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+                <form action="/busquedaviajes" method="GET" class="grid grid-cols-1 sm:grid-cols-4 gap-6">
                     <div>
                         <label for="origen" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Origen</label>
                         <select name="origen" id="origen" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
@@ -62,18 +62,43 @@
                         </select>
                     </div>
                     <div>
-                        <label for="fecha" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de viaje</label>
-                        <input type="date" name="fecha" id="fecha" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <label for="fecha_inicio" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de viaje</label>
+                        <input type="date" name="fecha_inicio" id="fecha_inicio" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label for="fecha-regreso" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de regreso (opcional)</label>
-                        <input type="date" name="fecha-regreso" id="fecha-regreso" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <label for="fecha_retorno" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de regreso (opcional)</label>
+                        <input type="date" name="fecha_retorno" id="fecha_retorno" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div>
                         <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Buscar</button>
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="thead">
+                    <tr>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Fecha de Salida</th>
+                        <th>Fecha de Retorno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($datos as $info)
+                        <tr>
+                            <td>{{ $info->origen }}</td>
+                            <td>{{ $info->destino }}</td>
+                            <td>{{ $info->fecha_inicio }}</td>
+                            <td>{{ $info->fecha_retorno }}</td>
+                            <td></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
     <h1 class="text-4xl font-bold text-center mt-8">Viajes disponibles</h1>

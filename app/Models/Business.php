@@ -20,7 +20,7 @@ class Business extends Model
 		'direccion' => 'required',
 		'RUC' => 'required',
     ];
-    
+    public $timestamps = false;
     /**
      * Attributes that should be mass-assignable.
      *
