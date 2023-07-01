@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Bus;
 use Illuminate\Http\Request;
 
 class SelectviajeController extends Controller
 {
-    public function index()
+    public function index($id_viaje)
     {
-        return view('selectviaje'); 
+        $bus = Bus::where('id_viaje',$id_viaje)->paginate();
+        $datos = $bus[0];
+        $estados = $datos["asientos"];
+        
+        return view('selectviaje',compact('estados'));
     }
 }
