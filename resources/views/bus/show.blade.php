@@ -1,7 +1,7 @@
-@extends('layoutsBusiness.app')
+@extends('layouts.app')
 
 @section('template_title')
-    {{ $viaje->name ?? "{{ __('Show')}}"}} Viaje
+    {{ $bus->name ?? __('Show') }} Bus 
 @endsection
 
 @section('content')
@@ -11,34 +11,38 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Viaje</span>
+                            <span class="card-title">{{ __('Show') }} Bus</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('viajes.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('buses.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Viaje:</strong>
-                            {{ $viaje->id_viaje }}
+                            <strong>Id Bus:</strong>
+                            {{ $bus->id_bus }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Inicio:</strong>
-                            {{ $viaje->fecha_inicio }}
+                            <strong>Num Bus:</strong>
+                            {{ $bus->num_bus }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Retorno:</strong>
-                            {{ $viaje->fecha_retorno }}
+                            <strong>Capacidad:</strong>
+                            {{ $bus->capacidad }}
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $viaje->estado }}
+                            {{ $bus->estado }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Ruta:</strong>
-                            {{ $viaje->id_ruta }}
+                            <strong>Id Viaje:</strong>
+                            {{ $bus->id_viaje }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Asientos:</strong>
+                            {{ $bus->asientos }}
                         </div>
 
                     </div>

@@ -13,10 +13,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} bus</span>
+                        <span class="card-title">{{ __('Create') }} Bus</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('bus.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('buses.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('bus.form')
