@@ -16,7 +16,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('viajes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('bus.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -34,37 +34,20 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Id Viaje</th>
-										<th>Fecha Inicio</th>
-										<th>Fecha Retorno</th>
+										<th>Numero de Bus</th>
+										<th>Capacidad</th>
+										<th>ID de viaje</th>
 										<th>Estado</th>
-										<th>Id Ruta</th>
-
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($viajes as $viaje)
+                                    @foreach ($buses as $info)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $viaje->id_viaje }}</td>
-											<td>{{ $viaje->fecha_inicio }}</td>
-											<td>{{ $viaje->fecha_retorno }}</td>
-											<td>{{ $viaje->estado }}</td>
-											<td>{{ $viaje->id_ruta }}</td>
-                                            <!-- Esta Parte falta arreglar para hacer la eliminacion y editar y mostrar -->
-                                
-                                            {{--<td>
-                                                <form action="{{ route('viajes.destroy',$viaje->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('viajes.show',$viaje->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('viajes.edit',$viaje->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
-                                            </td>--}}
+											<td>{{ $info->num_bus }}</td>
+											<td>{{ $info->capacidad }}</td>
+											<td>{{ $info->id_viaje }}</td>
+											<td>{{ $info->estado }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -72,7 +55,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $viajes->links() !!}
             </div>
         </div>
     </div>

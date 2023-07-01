@@ -33,12 +33,13 @@ return new class extends Migration
             $table->foreign('id_cliente')->references('id_usuario')->on('clientes');
             $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
         });
-        Schema::create('bus', function (Blueprint $table) {
+        Schema::create('buses', function (Blueprint $table) {
             $table->id('id_bus');
             $table->integer('num_bus');
             $table->integer('capacidad');
             $table->unsignedTinyInteger('estado');
             $table->unsignedBigInteger('id_viaje');
+            $table->json('asientos')->default('[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]');
             $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
         });
     }
@@ -48,7 +49,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bus');
+        Schema::dropIfExists('buses');
         Schema::dropIfExists('reserva');
         Schema::dropIfExists('viajes');
         Schema::dropIfExists('ruta');

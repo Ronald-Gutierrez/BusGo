@@ -70,10 +70,11 @@
                             <img class="h-8 w-auto" src="{{ asset('img/logo.png') }}" alt="Logo">
                         </div>
                         <div class="ml-4 text-white">
-                            <a href="{{ url('/homebusiness') }}" class="font-semibold text-xl">Inicio</a>
+                            <a href="{{ url('/home') }}" class="font-semibold text-xl">Inicio</a>
                             @auth
                                 <a href="{{ url('/ruta') }}" class="ml-4 font-semibold text-xl">Crear Ruta</a>
                                 <a href="{{ url('/viajes') }}" class="ml-4 font-semibold text-xl">Crear Viaje</a> 
+                                <a href="{{ url('/buses') }}" class="ml-4 font-semibold text-xl">Registrar Bus</a> 
                             @endauth
                         </div>
                     </div>

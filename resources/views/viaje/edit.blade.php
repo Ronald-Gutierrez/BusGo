@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layoutsBusiness.app')
 
 @section('template_title')
     {{ __('Update') }} Viaje

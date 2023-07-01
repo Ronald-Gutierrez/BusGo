@@ -1,7 +1,7 @@
 @extends('layoutsBusiness.app')
 
 @section('template_title')
-    {{ __('Update') }} Rutum
+    {{ __('Update') }} Bus
 @endsection
 
 @section('content')
@@ -13,14 +13,14 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Rutum</span>
+                        <span class="card-title">{{ __('Update') }} bus</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('ruta.update', $rutum->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('bus.update', $bus->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('rutum.form')
+                            @include('bus.form')
 
                         </form>
                     </div>
