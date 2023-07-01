@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class ClienteSeeder extends Seeder
 {
@@ -14,16 +15,14 @@ class ClienteSeeder extends Seeder
      */
     public function run()
     {
-        $names = ['María Cliente', 'Ana Cliente', 'Laura Cliente', 'Rosa Cliente', 'Sofía Cliente'];
+        $faker = Faker::create();
 
-        $clientes = [];
+        $users = DB::table('users')->pluck('id');
 
-        foreach ($names as $name) {
-            $clientes[] = [
-                'name' => $name,
-            ];
+        foreach ($users as $userId) {
+            DB::table('clientes')->insert([
+                'id_usuario' => $userId,
+            ]);
         }
-
-        DB::table('clientes')->insert($clientes);
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class BusinessSeeder extends Seeder
 {
@@ -14,16 +15,14 @@ class BusinessSeeder extends Seeder
      */
     public function run()
     {
-        $names = ['Luis Empresa', 'Carlos Empresa', 'Juan Empresa', 'Pedro Empresa', 'José Empresa'];
+        $faker = Faker::create();
 
-        $businesses = [];
+        $userId = 1; // Asignar el ID del usuario número 1
 
-        foreach ($names as $name) {
-            $businesses[] = [
-                'name' => $name,
-            ];
-        }
-
-        DB::table('businesses')->insert($businesses);
+        DB::table('businesses')->insert([
+            'id_usuario' => $userId,
+            'direccion' => $faker->address,
+            'RUC' => $faker->randomNumber(9),
+        ]);
     }
 }
