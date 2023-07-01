@@ -19,7 +19,7 @@ Auth::routes();
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/homebusiness', [HomeController::class, 'index'])->name('homebusiness');
+Route::get('/busquedaviajes',[HomeController::class,'buscar_viajes_cliente'])->name('buscar_viajes_cliente');
 Route::get('/admin/dashboard', [AdminHomeController::class, 'index'])->name('admin.dashboard');
 Route::get('/client/dashboard', [ClientHomeController::class, 'index'])->name('client.dashboard');
 Route::get('/acerca', [AcercaController::class, 'index'])->name('acerca');
