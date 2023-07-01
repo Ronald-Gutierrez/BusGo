@@ -28,16 +28,77 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 **c) Ofrecer servicios adicionales:** Además de la venta de pasajes, BusGO podría proporcionar servicios complementarios, como la reserva de asientos, la emisión de boletos electrónicos, la notificación de cambios en los horarios de los autobuses, la visualización de rutas y paradas, entre otros. Estos servicios adicionales mejorarían la experiencia del usuario y agregarían valor a la plataforma.
 
 
-## :label: Tecnologias Usadas <br>
-- **a)** *Laravel* 
-- **b)** *Mysql* 
-- **c)** *Lenguaje de Programación Php* 
-- **d)** *TypeScript* 
+## Tecnologias Usadas :label:
+- **a)** [Laravel](https://laravel.com)
+- **b)** [Mysql](https://www.mysql.com)
+- **c)** [Lenguaje de Programación Php](https://www.php.net)
+- **d)** [TypeScript](https://www.typescriptlang.org)
+- **e)** [Xamp](https://www.apachefriends.org/es/index.html)
+- **f)** [Tailwind](https://tailwindcss.com/)
+- **g)** [SweetAlert](https://sweetalert2.github.io/)
+- **h)** [BootsStrap](https://getbootstrap.com/)
+## :label: Instalacion <br>
 
+### Clonar el Repositorio de git
+
+```bash
+git clone https://github.com/Ronald-Gutierrez/BusGo.git
+```
+
+### Moverse al directorio del proyecto
+
+```bash
+cd BusGo
+```
+
+### Descargar Dependencias del Proyecto
+
+Como las dependencias del proyecto las maneja **composer** debemos ejecutar el comando:
+
+```bash
+composer install
+npm install
+```
+
+### Configurar Entorno
+
+La configuración del entorno se hace en el archivo **.env** pero esé archivo no se puede versionar según las restricciones del archivo **.gitignore**, igualmente en el proyecto hay un archivo de ejemplo  **.env.example** debemos copiarlo con el siguiente comando:
+
+```bash
+cp .env.example .env
+```
+
+Luego es necesario modificar los valores de las variables de entorno para adecuar la configuración a nuestro entorno de desarrollo, por ejemplo los parámetros de conexión a la base de datos.
+
+### Generar Clave de Seguridad de la Aplicación
+
+```bash
+php artisan key:generate
+```
+
+### Migrar la Base de Datos
+
+El proyecto ya tiene los modelos, migraciones y seeders generados. Entonces lo único que nos hace falta es ejecutar la migración y ejecutar el siguiente comando:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+- **migrate:fresh** ejecuta la migración **eliminando** todas las tablas y volviendo a generarlas.
+- **--seed** ejecuta los Seeders habilitados
+
+### Ejecutar el proyecto
+La instrucción php artisan serve se utiliza en Laravel para iniciar el servidor de desarrollo integrado (artisan) y ejecutar la aplicación web en un entorno local, en la direccion indicada del archivo **.env**.
+```bash
+php artisan serve
+```
+Una ves realizado eso, en otra ventana de comandos, tipeamos el siguiente codigo, es un comando comúnmente utilizado en proyectos Laravel. Cuando ejecutas este comando en un proyecto Laravel, utiliza Laravel Mix, una herramienta de compilación de activos, para compilar y combinar los archivos CSS y JavaScript de tu aplicación
+```bash
+npm run dev
+```
  
 ## :label: Interfaz del Proyecto <br>
 	
-
 
 ## :red_circle: Desarrollo
 
