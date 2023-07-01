@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layoutsBusiness.app')
 
 @section('template_title')
-    {{ $viaje->name ?? "{{ __('Show') Viaje" }}
+    {{ $viaje->name ?? "{{ __('Show')}}"}} Viaje
 @endsection
 
 @section('content')

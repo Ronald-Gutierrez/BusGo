@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layoutsBusiness.app')
 
 @section('template_title')
-    {{ $rutum->name ?? "{{ __('Show') Rutum" }}
+    {{ $rutum->name ?? "{{ __('Show')}}"}} Rutum 
 @endsection
 
 @section('content')
