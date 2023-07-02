@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Business;
-use App\Models\Viaje;
 use App\Models\Rutum;
 use App\Models\Cliente;
 
