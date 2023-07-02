@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Viaje;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 /**
@@ -18,7 +19,10 @@ class ViajeController extends Controller
      */
     public function index()
     {
-        $viajes = Viaje::paginate();
+        $viajes = Viaje::select('viajes.id_viaje','viajes.fecha_inicio','viajes.fecha_retorno','viajes.estado','viajes.id_ruta')
+                ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
+                ->where('ruta.encargado',Auth::id())
+                ->paginate();
 
         return view('viaje.index', compact('viajes'))
             ->with('i', (request()->input('page', 1) - 1) * $viajes->perPage());

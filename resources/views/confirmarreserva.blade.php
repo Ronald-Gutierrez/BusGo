@@ -24,7 +24,6 @@
             </div>
         </div>
     </div>
-
     <div class="row text-center justify-content-center">
         <div class="col-md-6">
             <div class="card-propio">
@@ -42,8 +41,14 @@
                         <p>Asientos</p>
                         <p id="monto">S/</p>
                     </div>
-                    <a href="#" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;" onclick="showSuccessAlert()">Confirmar Reserva</a>
-                    <!-- Agrega el atributo onclick y la función showSuccessAlert() -->
+                    <form method="GET" action="{{ route('realizarreserva',$id_viaje) }}">
+                        <?php $i=1?>
+                        @while($i < 31)
+                            <input id="asiento{{$i}}" name="asiento{{$i}}" type="hidden" value="{{$informacion_asientos['asiento'.strval($i)]}}">
+                            <?php ++$i?>
+                        @endwhile
+                        <button type="submit" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;">Continuar</button>
+                    </form>
                 </div>
             </div>
         </div>

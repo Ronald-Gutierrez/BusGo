@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bus;
+use App\Models\Rutum;
+use App\Models\Viaje;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 /**
@@ -18,7 +21,11 @@ class BusController extends Controller
      */
     public function index()
     {
-        $buses = Bus::paginate();
+        $buses = Bus::select('buses.id_bus','buses.num_bus','buses.capacidad','buses.estado','buses.id_viaje','buses.asientos')
+                ->join('viajes','buses.id_viaje','=','viajes.id_viaje')
+                ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
+                ->where('ruta.encargado',Auth::id())
+                ->paginate();
 
         return view('bus.index', compact('buses'))
             ->with('i', (request()->input('page', 1) - 1) * $buses->perPage());

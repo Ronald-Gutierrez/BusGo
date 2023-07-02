@@ -11,7 +11,7 @@ class SelectviajeController extends Controller
         $bus = Bus::where('id_viaje',$id_viaje)->paginate();
         $datos = $bus[0];
         $estados = $datos["asientos"];
-        
-        return view('selectviaje',compact('estados'));
+        $capacidad = $datos["capacidad"];
+        return view('selectviaje',compact('estados','id_viaje','capacidad'));
     }
 }

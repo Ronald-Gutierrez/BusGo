@@ -25,8 +25,10 @@ Route::get('/acerca', [AcercaController::class, 'index'])->name('acerca');
 Route::get('/soporte', [SoporteController::class, 'index'])->name('soporte');
 Route::get('/selectviaje', [SelectviajeController::class, 'index'])->name('viaje');
 Route::get('/selectviaje/{id_viaje}', [SelectviajeController::class, 'index'])->name('selectviaje');
-Route::get('/selectviaje/confirmardatos', [ConfirmardatosController::class, 'index'])->name('confirmardatos');
-Route::get('/selectviaje/confirmarreserva', [ConfirmarreservaController::class, 'index'])->name('confirmardatos');
+Route::get('/selectviaje/{id_viaje}/confirmardatos', [ConfirmardatosController::class, 'index'])->name('confirmardatos');
+Route::get('/selectviaje/{id_viaje}/confirmarreserva', [ConfirmarreservaController::class, 'index'])->name('confirmarreserva');
+Route::get('/selectviaje/{id_viaje}/reservando', [ConfirmarreservaController::class, 'reservar'])->name('realizarreserva');
+
 Route::get('/terminos', [TerminosController::class, 'index'])->name('terminos');
 Route::resource('/ruta', App\Http\Controllers\RutumController::class)->middleware('auth');
 Route::resource('/viajes', App\Http\Controllers\ViajeController::class)->middleware('auth');
