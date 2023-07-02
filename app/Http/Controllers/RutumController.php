@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rutum;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 /**
@@ -18,7 +19,8 @@ class RutumController extends Controller
      */
     public function index()
     {
-        $ruta = Rutum::paginate();
+        $ruta = Rutum::where('ruta.encargado',Auth::id())
+                ->paginate();
 
         return view('rutum.index', compact('ruta'))
             ->with('i', (request()->input('page', 1) - 1) * $ruta->perPage());
