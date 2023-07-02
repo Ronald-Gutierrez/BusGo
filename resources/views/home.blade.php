@@ -89,7 +89,15 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    @foreach ($datos as $info)
+                        <tr>
+                            <td>{{ $info->origen }}</td>
+                            <td>{{ $info->destino }}</td>
+                            <td>{{ $info->fecha_inicio }}</td>
+                            <td>{{ $info->fecha_retorno }}</td>
+                            <td><a href="{{ route('selectviaje',$info->id_viaje) }}">Selecionar</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

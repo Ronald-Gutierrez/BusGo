@@ -23,7 +23,6 @@
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-6">
             <div class="card-propio">
@@ -41,7 +40,14 @@
                         <p>Asientos</p>
                         <p id="monto">S/</p>
                     </div>
-                    <a href="{{ url('/selectviaje/confirmarreserva') }}" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;">Continuar</a>
+                    <form method="GET" action="{{ route('confirmarreserva',$id_viaje) }}">
+                        <?php $i=1?>
+                        @while($i < 31)
+                            <input id="asiento{{$i}}" name="asiento{{$i}}" type="hidden" value="{{$informacion_asientos['asiento'.strval($i)]}}">
+                            <?php ++$i?>
+                        @endwhile
+                        <button type="submit" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;">Continuar</button>
+                    </form>
                 </div>
             </div>
         </div>
