@@ -55,15 +55,15 @@
                                         <td>{{ $rutum->encargado }}</td>
                                         <!-- Esta Parte falta arreglar para hacer la eliminacion y editar y mostrar -->
                                 
-                                        {{--<td>
-                                            <form action="{{ route('ruta.destroy',$rutum->id) }}" method="POST" class="formEliminar">
-                                                <a class="btn btn-sm btn-primary " href="{{ route('ruta.show',$rutum->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                <a class="btn btn-sm btn-success" href="{{ route('ruta.edit',$rutum->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                        <td>
+                                            <form action="{{ route('ruta.destroy',['rutum' => $rutum->id_ruta]) }}" method="POST" class="formEliminar">
+                                                <a class="btn btn-sm btn-primary " href="{{ route('ruta.show',['rutum' => $rutum->id_ruta]) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                <a class="btn btn-sm btn-success" href="{{ route('ruta.edit',['rutum' => $rutum->id_ruta]) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
                                             </form>
-                                        </td>--}}
+                                        </td>
 
                                     </tr>
                                 @endforeach

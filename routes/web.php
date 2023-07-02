@@ -6,6 +6,7 @@ use App\Http\Controllers\AcercaController;
 use App\Http\Controllers\SoporteController;
 use App\Http\Controllers\ViajeController;
 use App\Http\Controllers\RutumController;
+use App\Http\Controllers\BusController;
 use App\Http\Controllers\SelectviajeController;
 use App\Http\Controllers\ConfirmardatosController;
 use App\Http\Controllers\ConfirmarreservaController;
@@ -20,8 +21,6 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/busquedaviajes',[HomeController::class,'buscar_viajes_cliente'])->name('buscar_viajes_cliente');
-Route::get('/admin/dashboard', [AdminHomeController::class, 'index'])->name('admin.dashboard');
-Route::get('/client/dashboard', [ClientHomeController::class, 'index'])->name('client.dashboard');
 Route::get('/acerca', [AcercaController::class, 'index'])->name('acerca');
 Route::get('/soporte', [SoporteController::class, 'index'])->name('soporte');
 Route::get('/selectviaje', [SelectviajeController::class, 'index'])->name('viaje');
@@ -31,5 +30,6 @@ Route::get('/selectviaje/confirmarreserva', [ConfirmarreservaController::class, 
 Route::get('/terminos', [TerminosController::class, 'index'])->name('terminos');
 Route::resource('/ruta', App\Http\Controllers\RutumController::class)->middleware('auth');
 Route::resource('/viajes', App\Http\Controllers\ViajeController::class)->middleware('auth');
-Route::resource('/bus', App\Http\Controllers\BusController::class)->middleware('auth');
+Route::resource('/buses', App\Http\Controllers\BusController::class)->middleware('auth');
+
 

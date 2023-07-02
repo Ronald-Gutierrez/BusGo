@@ -1,3 +1,6 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> <!-- Agrega el enlace al archivo JS de SweetAlert -->
+</head>
 <div class="box box-info padding-1">
     <div class="box-body">
         
@@ -32,6 +35,23 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="" class="btn btn-primary" onclick="showSuccessAlert()">{{ __('Crear Viaje') }}</button>
+    </div>
     </div>
 </div>
+<script>
+    function showSuccessAlert() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Viaje creado con éxito',
+            text: '¡Su viaje se mostrará en pantalla!',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK',
+            didClose: () => {
+                setTimeout(() => {
+                    window.location.href = "{{ url('/viaje') }}";
+                }, 3000); // Retraso de 3 segundos (3000 ms)
+            }
+        });
+    }
+</script>

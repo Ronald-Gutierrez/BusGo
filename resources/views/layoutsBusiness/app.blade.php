@@ -75,7 +75,7 @@
                         @auth
                             <a href="{{ url('/ruta') }}" class="ml-4 font-semibold text-xl">Crear Ruta</a>
                             <a href="{{ url('/viajes') }}" class="ml-4 font-semibold text-xl">Crear Viaje</a> 
-                            <a href="{{ url('/bus') }}" class="ml-4 font-semibold text-xl">Registrar Bus</a> 
+                            <a href="{{ url('/buses') }}" class="ml-4 font-semibold text-xl">Registrar Bus</a> 
                         @endauth
                     </div>
                 </div>

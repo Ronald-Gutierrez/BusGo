@@ -56,15 +56,15 @@
 											<td>{{ $viaje->id_ruta }}</td>
                                             <!-- Esta Parte falta arreglar para hacer la eliminacion y editar y mostrar -->
                                 
-                                            {{--<td>
-                                                <form action="{{ route('viajes.destroy',$viaje->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('viajes.show',$viaje->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('viajes.edit',$viaje->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                            <td>
+                                                <form action="{{ route('viajes.destroy',['viaje' => $viaje->id_viaje]) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('viajes.show',['viaje' => $viaje->id_viaje]) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('viajes.edit',['viaje' => $viaje->id_viaje]) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
                                                 </form>
-                                            </td>--}}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Bus;
+use Illuminate\Http\Request;
 
+/**
+ * Class BusController
+ * @package App\Http\Controllers
+ */
 class BusController extends Controller
 {
     /**
@@ -18,8 +21,9 @@ class BusController extends Controller
         $buses = Bus::paginate();
 
         return view('bus.index', compact('buses'))
-            ->with('i', (request()->input('page', 1) - 1) * 10);
+            ->with('i', (request()->input('page', 1) - 1) * $buses->perPage());
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -30,7 +34,7 @@ class BusController extends Controller
         $bus = new Bus();
         return view('bus.create', compact('bus'));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -40,10 +44,10 @@ class BusController extends Controller
     public function store(Request $request)
     {
         request()->validate(Bus::$rules);
-        
+
         $bus = Bus::create($request->all());
 
-        return redirect()->route('bus.index')
+        return redirect()->route('buses.index')
             ->with('success', 'Bus created successfully.');
     }
 
@@ -77,7 +81,7 @@ class BusController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Bus $Bus
+     * @param  Bus $bus
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Bus $bus)
@@ -86,8 +90,8 @@ class BusController extends Controller
 
         $bus->update($request->all());
 
-        return redirect()->route('bus.index')
-            ->with('success', 'bus updated successfully');
+        return redirect()->route('buses.index')
+            ->with('success', 'Bus updated successfully');
     }
 
     /**
@@ -99,7 +103,7 @@ class BusController extends Controller
     {
         $bus = Bus::find($id)->delete();
 
-        return redirect()->route('bus.index')
-            ->with('success', 'bus deleted successfully');
+        return redirect()->route('buses.index')
+            ->with('success', 'Bus deleted successfully');
     }
 }
