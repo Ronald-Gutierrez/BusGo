@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bus;
 use Illuminate\Http\Request;
+use App\Events\SelectviajeChangedEvent;
 
 class ConfirmarreservaController extends Controller
 {
@@ -25,6 +26,8 @@ class ConfirmarreservaController extends Controller
             ++$i;
         }
         Bus::where('id_viaje',$id_viaje)->update(['asientos' => $estados]);
+        $actualizar = new SelectviajeChangedEvent($id_viaje,$estados);
+        event($actualizar);
         return redirect()->route('home');
     }
 }
