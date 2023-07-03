@@ -19,7 +19,7 @@
             @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
         </style>
     </head>
-
+    
     <div>
 
     <h1 class="text-center font-bold text-xl"> RESERVA TU ASIENTO AQUI! </h1>
