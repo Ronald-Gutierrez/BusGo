@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Events\SelectviajeChangedEvent;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AcercaController;
 use App\Http\Controllers\SoporteController;
@@ -33,5 +34,3 @@ Route::get('/terminos', [TerminosController::class, 'index'])->name('terminos');
 Route::resource('/ruta', App\Http\Controllers\RutumController::class)->middleware('auth');
 Route::resource('/viajes', App\Http\Controllers\ViajeController::class)->middleware('auth');
 Route::resource('/buses', App\Http\Controllers\BusController::class)->middleware('auth');
-
-
