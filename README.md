@@ -4,6 +4,14 @@
 <h1 align="center">BUSGO</h1>
 <h1 align="center">Reserva de pasajes de buses online</h1>
 
+## Tabla de Contenidos:
+---
+- [Problematica] (#problematica)
+-
+-
+-
+-
+---
 ## Problematica:
 Actualmente las empresas de transporte interprovinciales son grandes corporaciones que brindan servicios a la población; para la comodidad de los clientes, estas empresas fueron innnovando y adaptandose al cambio digital. 
 La mayoria de estas empresas mantienen sus areas de ventas en los mismos establecimientos de transporte, incluso cuentan con sus propios sitios web que son constantemente mantenidos por profesionales. 
@@ -37,24 +45,20 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 - **f)** [Tailwind](https://tailwindcss.com/)
 - **g)** [SweetAlert](https://sweetalert2.github.io/)
 - **h)** [BootsStrap](https://getbootstrap.com/)
+- **i)** [Pusher](https://https://pusher.com//)
 
 ## Características
 
 - Renderizado de un calendario para visualizar los viajes disponibles.
 - Funciones para mostrar y crear viajes.
 - Controlador, modelo, migración y página relacionados con los viajes.
-- Relación y funciones para el modelo "UbigeoZone".
 - Relaciones y funciones para el modelo "Ruta".
 - Controlador, modelo y página para la duración de los viajes.
 - Rutas para los viajes y la duración de los viajes.
 - Opciones para los viajes y la duración de los viajes.
-- Función para obtener el nombre de "Ubigeo".
-- Redireccionamiento para registrar los datos de duración del viaje desde la zona.
 - Funciones para mostrar y crear servicios.
 - Página para mostrar un servicio específico.
 - Página para crear un servicio específico.
-- Página para mostrar una sucursal específica.
-- Página para crear una sucursal específica.
 - Menú lateral con rutas.
 - Controlador, modelo, migración y página relacionados con las sucursales.
 - Cambios menores.
