@@ -27,6 +27,26 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 
 **c) Ofrecer servicios adicionales:** Además de la venta de pasajes, BusGO podría proporcionar servicios complementarios, como la reserva de asientos, la emisión de boletos electrónicos, la notificación de cambios en los horarios de los autobuses, la visualización de rutas y paradas, entre otros. Estos servicios adicionales mejorarían la experiencia del usuario y agregarían valor a la plataforma.
 
+## Características
+
+- Renderizado de un calendario para visualizar los viajes disponibles.
+- Funciones para mostrar y crear viajes.
+- Controlador, modelo, migración y página relacionados con los viajes.
+- Relación y funciones para el modelo "UbigeoZone".
+- Relaciones y funciones para el modelo "Ruta".
+- Controlador, modelo y página para la duración de los viajes.
+- Rutas para los viajes y la duración de los viajes.
+- Opciones para los viajes y la duración de los viajes.
+- Función para obtener el nombre de "Ubigeo".
+- Redireccionamiento para registrar los datos de duración del viaje desde la zona.
+- Funciones para mostrar y crear servicios.
+- Página para mostrar un servicio específico.
+- Página para crear un servicio específico.
+- Página para mostrar una sucursal específica.
+- Página para crear una sucursal específica.
+- Menú lateral con rutas.
+- Controlador, modelo, migración y página relacionados con las sucursales.
+- Cambios menores.
 
 ## Tecnologias Usadas :label:
 - **a)** [Laravel](https://laravel.com)
@@ -96,7 +116,11 @@ Una ves realizado eso, en otra ventana de comandos, tipeamos el siguiente codigo
 ```bash
 npm run dev
 ```
- 
+## Instalacion de Pusher y Echo
+Pusher es una herramienta que permite a los desarrolladores agregar funcionalidades en tiempo real a sus aplicaciones mediante la entrega instantánea de mensajes a través de conexiones WebSocket, lo que brinda una experiencia más interactiva y dinámica para los usuarios.
+```bash
+composer require pusher/pusher-php-server
+```
 ## :label: Interfaz del Proyecto <br>
 	
 
