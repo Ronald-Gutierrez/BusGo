@@ -6,11 +6,13 @@
 
 ## Tabla de Contenidos:
 ---
-- [Problematica] (#problematica)
--
--
--
--
+- [Problematica](#problematica)
+- [Aplicaciones Similares](#aplicaciones-similares)
+- [Propósito del Proyecto](#propósitodelproyecto)
+- [Tecnologías Usadas](#tecnología-usadas)
+- [Características](#características)
+- [Instalación](#instalación)
+- [Interfaz del Proyecto](#interfaz-del-proyecto)
 ---
 ## Problematica:
 Actualmente las empresas de transporte interprovinciales son grandes corporaciones que brindan servicios a la población; para la comodidad de los clientes, estas empresas fueron innnovando y adaptandose al cambio digital. 
@@ -63,7 +65,7 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 - Controlador, modelo, migración y página relacionados con las sucursales.
 - Cambios menores.
 
-## :label: Instalacion <br>
+## :label: Instalación <br>
 
 ### Clonar el Repositorio de git
 
