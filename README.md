@@ -37,6 +37,28 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 - **f)** [Tailwind](https://tailwindcss.com/)
 - **g)** [SweetAlert](https://sweetalert2.github.io/)
 - **h)** [BootsStrap](https://getbootstrap.com/)
+
+## Características
+
+- Renderizado de un calendario para visualizar los viajes disponibles.
+- Funciones para mostrar y crear viajes.
+- Controlador, modelo, migración y página relacionados con los viajes.
+- Relación y funciones para el modelo "UbigeoZone".
+- Relaciones y funciones para el modelo "Ruta".
+- Controlador, modelo y página para la duración de los viajes.
+- Rutas para los viajes y la duración de los viajes.
+- Opciones para los viajes y la duración de los viajes.
+- Función para obtener el nombre de "Ubigeo".
+- Redireccionamiento para registrar los datos de duración del viaje desde la zona.
+- Funciones para mostrar y crear servicios.
+- Página para mostrar un servicio específico.
+- Página para crear un servicio específico.
+- Página para mostrar una sucursal específica.
+- Página para crear una sucursal específica.
+- Menú lateral con rutas.
+- Controlador, modelo, migración y página relacionados con las sucursales.
+- Cambios menores.
+
 ## :label: Instalacion <br>
 
 ### Clonar el Repositorio de git
@@ -87,6 +109,13 @@ php artisan migrate:fresh --seed
 - **migrate:fresh** ejecuta la migración **eliminando** todas las tablas y volviendo a generarlas.
 - **--seed** ejecuta los Seeders habilitados
 
+### Instalación Pusher y Echo 
+- Pusher es una herramienta que permite a los desarrolladores agregar funcionalidades en tiempo real a sus aplicaciones mediante la entrega instantánea de mensajes a través de conexiones WebSocket, lo que brinda una experiencia más interactiva y dinámica para los usuarios.
+- Laravel Echo es una biblioteca de JavaScript que simplifica la implementación de aplicaciones web en tiempo real en combinación con Laravel y Pusher. Proporciona una interfaz intuitiva para escuchar eventos y recibir actualizaciones en tiempo real, permitiendo a los desarrolladores crear experiencias interactivas y dinámicas para los usuarios.
+```bash
+composer require pusher/pusher-php-server
+npm install laravel-echo
+```
 ### Ejecutar el proyecto
 La instrucción php artisan serve se utiliza en Laravel para iniciar el servidor de desarrollo integrado (artisan) y ejecutar la aplicación web en un entorno local, en la direccion indicada del archivo **.env**.
 ```bash
