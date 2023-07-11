@@ -29,11 +29,11 @@
                 <span class="card-propio__title">Salida y llegada</span> <br>
                 <div class="imagen-lateral"><br>
                     <img src="{{ asset('img/svg/bus-second-color.svg') }}" style="width: 40px;">
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <p>{{$origen}} {{$fecha_inicio}}</p>
                 </div>
                 <div class="imagen-lateral">
                     <img src="{{ asset('img/svg/llegada-seconf-color.svg') }}" style="width: 40px;">
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit </p>
+                    <p> {{$destino}} {{$fecha_retorno}} </p>
                 </div>
                 <div class="asientos-desc2">
                     <div class="asientos-monto">
