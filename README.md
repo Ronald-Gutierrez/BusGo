@@ -4,19 +4,29 @@
 <h1 align="center">BUSGO</h1>
 <h1 align="center">Reserva de pasajes de buses online</h1>
 
-## Problematica:
+## Tabla de Contenidos:
+---
+- [Problemática](#problemática)
+- [Aplicaciones Similares](#aplicaciones-similares)
+- [Propósito del Proyecto](#propósitodelproyecto)
+- [Tecnologías Usadas](#tecnología-usadas)
+- [Características](#características)
+- [Instalación](#instalación)
+- [Interfaz del Proyecto](#interfaz-del-proyecto)
+---
+## Problemática:
 Actualmente las empresas de transporte interprovinciales son grandes corporaciones que brindan servicios a la población; para la comodidad de los clientes, estas empresas fueron innnovando y adaptandose al cambio digital. 
 La mayoria de estas empresas mantienen sus areas de ventas en los mismos establecimientos de transporte, incluso cuentan con sus propios sitios web que son constantemente mantenidos por profesionales. 
 El transporte va en constante crecimiento al ritmo del aumento de la población, lo cual cada año se incrementan nuevas empresas de transporte que solo se encargan de tener su propia gestion y administracion de venta de pasajes de una manera primitiva.
 Nuestro proyecto está originalmente pensado para brindar la administracion y base de datos de venta de pasajes a empresas pequeñas que desconocen este tipo de gestion de forma digital, pretendemos ayudar sin fines de lucro, para poder ir mejorando el proyecto.
 
-## :label: Aplicaciones Similares:
+## Aplicaciones Similares:
 - [Recorrido.pe](https://www.recorrido.pe/es).
 - [Redbus](https://www.redbus.pe/).
 - [Checkmybus](https://www.checkmybus.pe/).
 - [Busbud](https://www.busbud.com/es).
 
-## :label: Propósito del Proyecto
+## Propósito del Proyecto
 
 BusGO busca proporcionar una solución eficiente y conveniente para la compra de boletos de autobús, simplificando el proceso tanto para los usuarios como para las compañías de autobuses. En este contexto tambien el software tiene como posibles metas:<br>
  Facilitar la compra de pasajes: El software puede permitir a los usuarios buscar y reservar pasajes de autobús de manera rápida y sencilla, eliminando la necesidad de hacer filas en las taquillas de las terminales. Esto les ahorraría tiempo y brindaría comodidad al realizar sus transacciones desde cualquier lugar con acceso a Internet.
@@ -27,8 +37,28 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 
 **c) Ofrecer servicios adicionales:** Además de la venta de pasajes, BusGO podría proporcionar servicios complementarios, como la reserva de asientos, la emisión de boletos electrónicos, la notificación de cambios en los horarios de los autobuses, la visualización de rutas y paradas, entre otros. Estos servicios adicionales mejorarían la experiencia del usuario y agregarían valor a la plataforma.
 
+## Características
 
-## Tecnologias Usadas :label:
+- Renderizado de un calendario para visualizar los viajes disponibles.
+- Funciones para mostrar y crear viajes.
+- Controlador, modelo, migración y página relacionados con los viajes.
+- Relación y funciones para el modelo "UbigeoZone".
+- Relaciones y funciones para el modelo "Ruta".
+- Controlador, modelo y página para la duración de los viajes.
+- Rutas para los viajes y la duración de los viajes.
+- Opciones para los viajes y la duración de los viajes.
+- Función para obtener el nombre de "Ubigeo".
+- Redireccionamiento para registrar los datos de duración del viaje desde la zona.
+- Funciones para mostrar y crear servicios.
+- Página para mostrar un servicio específico.
+- Página para crear un servicio específico.
+- Página para mostrar una sucursal específica.
+- Página para crear una sucursal específica.
+- Menú lateral con rutas.
+- Controlador, modelo, migración y página relacionados con las sucursales.
+- Cambios menores.
+
+## Tecnologias Usadas 
 - **a)** [Laravel](https://laravel.com)
 - **b)** [Mysql](https://www.mysql.com)
 - **c)** [Lenguaje de Programación Php](https://www.php.net)
@@ -37,7 +67,25 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 - **f)** [Tailwind](https://tailwindcss.com/)
 - **g)** [SweetAlert](https://sweetalert2.github.io/)
 - **h)** [BootsStrap](https://getbootstrap.com/)
-## :label: Instalacion <br>
+- **i)** [Pusher](https://https://pusher.com//)
+
+## Características
+
+- Renderizado de un calendario para visualizar los viajes disponibles.
+- Funciones para mostrar y crear viajes.
+- Controlador, modelo, migración y página relacionados con los viajes.
+- Relaciones y funciones para el modelo "Ruta".
+- Controlador, modelo y página para la duración de los viajes.
+- Rutas para los viajes y la duración de los viajes.
+- Opciones para los viajes y la duración de los viajes.
+- Funciones para mostrar y crear servicios.
+- Página para mostrar un servicio específico.
+- Página para crear un servicio específico.
+- Menú lateral con rutas.
+- Controlador, modelo, migración y página relacionados con las sucursales.
+- Cambios menores.
+
+## Instalación <br>
 
 ### Clonar el Repositorio de git
 
@@ -87,6 +135,13 @@ php artisan migrate:fresh --seed
 - **migrate:fresh** ejecuta la migración **eliminando** todas las tablas y volviendo a generarlas.
 - **--seed** ejecuta los Seeders habilitados
 
+### Instalación Pusher y Echo 
+- Pusher es una herramienta que permite a los desarrolladores agregar funcionalidades en tiempo real a sus aplicaciones mediante la entrega instantánea de mensajes a través de conexiones WebSocket, lo que brinda una experiencia más interactiva y dinámica para los usuarios.
+- Laravel Echo es una biblioteca de JavaScript que simplifica la implementación de aplicaciones web en tiempo real en combinación con Laravel y Pusher. Proporciona una interfaz intuitiva para escuchar eventos y recibir actualizaciones en tiempo real, permitiendo a los desarrolladores crear experiencias interactivas y dinámicas para los usuarios.
+```bash
+composer require pusher/pusher-php-server
+npm install laravel-echo
+```
 ### Ejecutar el proyecto
 La instrucción php artisan serve se utiliza en Laravel para iniciar el servidor de desarrollo integrado (artisan) y ejecutar la aplicación web en un entorno local, en la direccion indicada del archivo **.env**.
 ```bash
@@ -96,7 +151,11 @@ Una ves realizado eso, en otra ventana de comandos, tipeamos el siguiente codigo
 ```bash
 npm run dev
 ```
- 
+## Instalacion de Pusher y Echo
+Pusher es una herramienta que permite a los desarrolladores agregar funcionalidades en tiempo real a sus aplicaciones mediante la entrega instantánea de mensajes a través de conexiones WebSocket, lo que brinda una experiencia más interactiva y dinámica para los usuarios.
+```bash
+composer require pusher/pusher-php-server
+```
 ## :label: Interfaz del Proyecto <br>
 	
 
@@ -144,18 +203,28 @@ EL proyecto busca tener una interfaz amigable y confiable para los clientes, a t
 La realizacion del proyecto es de forma progresiva por la que los mockups seran una guia final o expectativa.
 
 ### Avance del proyecto
-Pagina de Inicio
-
+- **Pagina de Inicio:**
+Es la vista General al ingresar a la pagina Web, antes de pode rhacer una compra debemos registrarnos, pero ya podemos visualizar y buscar los viajes que estan disponibles.
 ![home_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/da09a5e2-72ac-4fe8-a28e-0ed637edd815)
 
-Pagina para el inicio de sesion
-
+- **Pagina para el inicio de sesion:**
+Aqui podemos Ingresar al sistema con nuestro usuario y contraseña.
 ![Login_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/f161987e-dd64-4a1e-ad77-c4ba6a563eff)
 
-Pagina para el registro
-
+- **Pagina para el registro:**
+Si no estamos registrados, tambien podemos loguearnos.
 ![Register_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/c8865dc9-a829-41a8-87fc-3232be55fccf)
 
+- **Pagina de Usuario y Reserva de Asiento:** Aca pódemos ya selecci0onar los viajes, tambien podemos ya reservar el asiento en la lista que se genera en la parte inferior.
+![UserRes](https://github.com/Ronald-Gutierrez/BusGo/blob/main/img/1.png?raw=true)
+
+- **Seleccion de Asiento:**Aqui  podemos verificar qeu asientos se encuentran disponibles o no.
+![SA](https://github.com/Ronald-Gutierrez/BusGo/blob/main/img/3.png?raw=true)
+- **Confirmación de datos:**Aqui Confirmamos nuestros datos para la reserva del asiento.
+![CD](https://github.com/Ronald-Gutierrez/BusGo/blob/main/img/4.png?raw=true)
+- **Confirmación de Reserva**
+![CR](https://github.com/Ronald-Gutierrez/BusGo/blob/main/img/5.png?raw=true)
+---
 MOCKUPS(Figma)
 
 Pagina de inicio
