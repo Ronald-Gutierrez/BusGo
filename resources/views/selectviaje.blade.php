@@ -52,8 +52,8 @@
                                         <button type="button" class="seat col4 asientoelegible" id="{{$i+1}}" value="reservado" data-bs-toggle="tooltip" data-precio="Ocupado">{{$i+1}}</button>
                                     <?php }else{?>
                                         <button type="button" class="seat col4 asientoelegible" id="{{$i+1}}" data-bs-toggle="tooltip" data-precio="120.00" value="120">{{$i+1}}</button>
-                                        <input id="asiento{{$i+1}}" name="asiento{{$i+1}}" type="hidden" value="">
                                     <?php }?>
+                                        <input id="asiento{{$i+1}}" name="asiento{{$i+1}}" type="hidden" value="">
                                     <?php ++$i ?>
                                 @endwhile
                             </div>
