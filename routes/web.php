@@ -12,6 +12,7 @@ use App\Http\Controllers\SelectviajeController;
 use App\Http\Controllers\ConfirmardatosController;
 use App\Http\Controllers\ConfirmarreservaController;
 use App\Http\Controllers\TerminosController;
+use App\Http\Controllers\ReservaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,9 @@ Route::get('/selectviaje/{id_viaje}', [SelectviajeController::class, 'index'])->
 Route::get('/selectviaje/{id_viaje}/confirmardatos', [ConfirmardatosController::class, 'index'])->name('confirmardatos');
 Route::get('/selectviaje/{id_viaje}/confirmarreserva', [ConfirmarreservaController::class, 'index'])->name('confirmarreserva');
 Route::get('/selectviaje/{id_viaje}/reservando', [ConfirmarreservaController::class, 'reservar'])->name('realizarreserva');
+Route::get('/reservas', [ReservaController::class, 'index'])->name('administrarreservas');
+Route::get('/cancelarreserva/{id_viaje}/{num_asiento}', [ReservaController::class, 'cancelar'])->name('cancelarreserva');
+Route::get('/busquedareservas',[ReservaController::class,'buscar_reservas'])->name('buscar_reservas');
 
 Route::get('/terminos', [TerminosController::class, 'index'])->name('terminos');
 Route::resource('/ruta', App\Http\Controllers\RutumController::class)->middleware('auth');
