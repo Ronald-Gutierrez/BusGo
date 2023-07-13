@@ -48,6 +48,13 @@ window.Echo.channel('asientos')
                 botonselec.value = "reservado";
                 botonselec.style.background = "red";
             }
+            if(e.estados[i+2] == '1' && botonselec.value == "reservado"){
+                let id_oculto = "asiento"+botonselec.id;
+                let datoculto = document.getElementById(id_oculto);
+                datoculto.value = "";
+                botonselec.value = "120";
+                botonselec.style.background = "";
+            }
         }
     }
 })
