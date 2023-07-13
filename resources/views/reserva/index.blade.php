@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
+<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Busgou</title>
+        <title>Reservas</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -22,13 +22,13 @@
     
     <div>
 
-    <h1 class="text-center font-bold text-xl"> RESERVA TU ASIENTO AQUI! </h1>
+    <h1 class="text-center font-bold text-xl"> ADMINISTRA TUS RESERVAS </h1>
     
     <!-- Formulario de búsqueda -->
     <div class="bg-gray-100 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-lg shadow-lg p-6">
-                <form action="/busquedaviajes" method="GET" class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+                <form action="/busquedareservas" method="GET" class="grid grid-cols-1 sm:grid-cols-4 gap-6">
                     <div>
                         <label for="origen" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Origen</label>
                         <select name="origen" id="origen" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
@@ -71,7 +71,7 @@
                     </div>
                     <div>
                         <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Buscar</button>
-                        <a href="/reservas" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ver reservas</a>
+                        <a href="/home" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ver viajes</a>
                     </div>
                 </form>
             </div>
@@ -84,9 +84,10 @@
                     <tr>
                         <th>Origen</th>
                         <th>Destino</th>
+                        <th>Numero de Asiento</th>
                         <th>Fecha de Salida</th>
                         <th>Fecha de Retorno</th>
-                        <th>Reservar</th>
+                        <th>Cancelar reserva</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,9 +95,10 @@
                         <tr>
                             <td>{{ $info->origen }}</td>
                             <td>{{ $info->destino }}</td>
+                            <td>{{ $info->num_asiento }}</td>
                             <td>{{ $info->fecha_inicio }}</td>
                             <td>{{ $info->fecha_retorno }}</td>
-                            <td><a href="{{ route('selectviaje',$info->id_viaje) }}">Selecionar</td>
+                            <td><a href="/cancelarreserva/{{$info->id_viaje}}/{{$info->num_asiento}}">Cancelar</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -107,4 +109,3 @@
         <p>© 2023 - Todos los derechos reservados</p>
     </div>
 @endsection
-

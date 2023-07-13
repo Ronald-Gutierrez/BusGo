@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Bus;
 use Illuminate\Http\Request;
 use App\Models\Viaje;
+use App\Models\Reserva;
 use App\Models\Rutum;
+use App\Events\SelectviajeChangedEvent;
+use Illuminate\Support\Facades\Auth;
+
 class ConfirmarreservaController extends Controller
 {
     public function index($id_viaje, Request $informacion_asientos)
@@ -26,13 +30,26 @@ class ConfirmarreservaController extends Controller
         $i = 0;
         $bus = Bus::where('id_viaje',$id_viaje)->paginate();
         $estados =  $bus[0]['asientos'];
-        while($i < 30){
+        $capacidad = $bus[0]['capacidad'];
+        $reservaciones = array();
+        $j = 0;
+        while($i < $capacidad){
             if($informacion_asientos['asiento'.strval($i+1)] == "1"){
                 $estados[$i+2] = '0';
+                $reservaciones[] = $i+1;
+                ++$j;
             }
             ++$i;
         }
         Bus::where('id_viaje',$id_viaje)->update(['asientos' => $estados]);
+        for ($k = 0; $k < $j; $k++) { 
+            Reserva::create([
+                'id_cliente' => Auth::id(),
+                'num_asiento' => $reservaciones[$k],
+                'id_viaje' => $id_viaje
+            ]);
+        }
+        event(new SelectviajeChangedEvent($id_viaje,$estados));
         return redirect()->route('home');
     }
 }
