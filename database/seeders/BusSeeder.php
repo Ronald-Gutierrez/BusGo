@@ -17,7 +17,7 @@ class BusSeeder extends Seeder
         $viajes = DB::table('viajes')->pluck('id_viaje')->toArray();
         $numBuses = range(1, 9);
 
-        $estados = [0, 1, 2]; // Estados posibles: 0 = Pendiente, 1 = Activo, 2 = Finalizado
+        $estados = [0, 1]; // Estados posibles: 0 = Pendiente, 1 = Activo, 2 = Finalizado
 
         foreach ($viajes as $viajeId) {
             $numBus = array_shift($numBuses);
