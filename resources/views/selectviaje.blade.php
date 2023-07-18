@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="empresa-description mb-2" style="position: absolute; top: 220px; left: 650px;">
+                    <div class="empresa-description mb-2">
                         <div class="card-propio">
                             <span class="card-propio__title">Salida y llegada</span>
                             <div class="imagen-lateral">
@@ -77,7 +77,7 @@
                                     <p>Asientos</p>
                                     <p id="monto">S/</p>
                                 </div>
-                                <button type="submit" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;" >RESERVAR</button>
+                                <button type="submit" class="button-reservar">RESERVAR</button>
                             </div>
                         </div>
                         <br>
