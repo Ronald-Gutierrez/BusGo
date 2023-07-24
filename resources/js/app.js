@@ -5,14 +5,14 @@ const cuandoSeHaceClick = function (evento) {
     if(this.value != 'reservado'){
         let id_oculto = "asiento"+this.id 
         let datoculto = document.getElementById(id_oculto)
-        if(this.style.background  == "green"){
+        if(this.style.background  == "greenyellow"){
             monto = monto - parseFloat(this.value)
             this.style.background  = ""
             datoculto.value = ""
         }
         else{
             monto = monto + parseFloat(this.value)
-            this.style.background  = "green"
+            this.style.background  = "greenyellow"
             datoculto.value = "1"
         }
         document.getElementById("monto").innerHTML = "S/"+monto 
@@ -31,7 +31,7 @@ window.Echo.channel('asientos')
     .listen('SelectviajeChangedEvent',(e)=>{
     let viajeselec = document.getElementById("viaje"+e.idviaje); 
     if(botones.length != 0 && viajeselec != null){
-        for(let i = 0; i<30; i++){
+        for(let i = 0; i<botones.length; i++){
             let s = i+1;
             let idboton = s.toString();
             let botonselec = document.getElementById(idboton);
@@ -47,6 +47,7 @@ window.Echo.channel('asientos')
                 }
                 botonselec.value = "reservado";
                 botonselec.style.background = "red";
+                botonselec.setAttribute("data-precio","Ocupado");
             }
             if(e.estados[i+2] == '1' && botonselec.value == "reservado"){
                 let id_oculto = "asiento"+botonselec.id;
@@ -54,6 +55,7 @@ window.Echo.channel('asientos')
                 datoculto.value = "";
                 botonselec.value = "120";
                 botonselec.style.background = "";
+                botonselec.setAttribute("data-precio","120.00");
             }
         }
     }
