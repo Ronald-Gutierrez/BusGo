@@ -55,20 +55,17 @@
     </div>
 
     <script>
-        function showSuccessAlert() {
+        document.querySelector('.button-reservar').addEventListener('click', function() {
             Swal.fire({
+                title: '¡Reserva confirmada!',
+                text: 'Su reserva ha sido confirmada con éxito',
                 icon: 'success',
-                title: 'Reserva hecha con éxito',
-                text: '¡Gracias por reservar con nosotros!',
-                confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                didClose: () => {
-                    setTimeout(() => {
-                        window.location.href = "{{ url('/home') }}";
-                    }, 1000); // Retraso de 1 segundo (1000 ms)
-                }
+                allowOutsideClick: false
+            }).then(function() {
+                window.location.href = '{{ url("/home") }}';
             });
-        }
+        });
     </script>
 </body>
 @endsection

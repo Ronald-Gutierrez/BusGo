@@ -57,36 +57,46 @@
                     <div class="form-group">
                         <label class="form-label">Nombre del Cliente</label>
                         <div class="form-value">
-                            <span class="form-text">{{ Auth::user()->name }}</span>
+                            <span class="form-text" style="font-size: 18px; font-weight: bold;">{{ Auth::user()->name }}</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Correo del Cliente</label>
                         <div class="form-value">
-                            <span class="form-text">{{ Auth::user()->email }}</span>
+                            <span class="form-text" style="font-size: 18px; font-weight: bold;">{{ Auth::user()->email }}</span>
                         </div>
                     </div>
                 </div>
                 <div class="terminos-condiciones">
                     <input type="checkbox" id="terminos" name="terminos" class="terminos-checkbox">
-                    <label for="terminos">Acepto los <a href="{{ url('/terminos') }}" id="terminos-link">Términos y Condiciones</a></label>
+                    <label for="terminos" style="font-size: 18px; font-weight: bold;">
+                        Acepto los <a href="{{ url('/terminos') }}" id="terminos-link" style="font-size: 18px; font-weight: bold;">Términos y Condiciones</a>
+                    </label>
                 </div>
-
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script>
-                    $(document).ready(function() {
-                        $('.button-reservar').on('click', function(e) {
-                            if (!$('.terminos-checkbox').is(':checked')) {
-                                e.preventDefault(); // Evita que se realice la acción predeterminada del botón
-                                $('.terminos-condiciones label').css('color', 'red'); // Cambia el color del texto a rojo
-                            }
-                        });
-                    });
-                </script>
-                
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function() {
+            $('.button-reservar').on('click', function(e) {
+                if (!$('.terminos-checkbox').is(':checked')) {
+                    e.preventDefault(); // Evita que se realice la acción predeterminada del botón
+                    Swal.fire({
+                        title: 'Oops...',
+                        text: 'Debes aceptar los términos y condiciones',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar',
+                        didClose: () => {
+                            $('.terminos-checkbox').prop('checked', true); // Marca automáticamente el checkbox al cerrar la alerta
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 @endsection
