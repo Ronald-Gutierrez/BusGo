@@ -86,4 +86,7 @@ class RegisterController extends Controller
         }
         return $usuario;
     }
+    public function probar_create(array $info){
+        return $this->create($info);
+    }
 }
