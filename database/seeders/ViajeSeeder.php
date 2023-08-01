@@ -15,7 +15,7 @@ class ViajeSeeder extends Seeder
     public function run()
     {
         $rutas = DB::table('ruta')->pluck('id_ruta')->toArray();
-        $estados = [0, 1, 2]; // Estados posibles: 0 = Pendiente, 1 = Activo, 2 = Finalizado
+        $estados = [0, 1]; // Estados posibles: 0 = Pendiente, 1 = Activo, 2 = Finalizado
 
         foreach ($rutas as $rutaId) {
             $fechaInicio = now()->addDays(rand(1, 30));

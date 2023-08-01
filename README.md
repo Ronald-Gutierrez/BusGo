@@ -245,6 +245,13 @@ Pagina de seleccion de destinos
 Pagina de reserva de asiento
 
 ![reserva_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/20309391-99a1-48fe-a481-332fc0e0502d)
+# **Pruebas Unitarias**
+
+## Test de Usuario, Cliente y Empresa
+
+## Test de Ruta, Crear, editar y eliminar
+## Test de Viaje, Crear, editar y eliminar
+## Test de Bus, Crear, editar y eliminar
 
 # **Estilos de Programación**
 
