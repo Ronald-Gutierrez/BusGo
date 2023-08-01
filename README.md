@@ -248,8 +248,9 @@ Pagina de reserva de asiento
 # **Pruebas Unitarias**
 
 ## Test de Usuario, Cliente y Empresa
-
+![test_user](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/test_user.jpg)
 ## Test de Ruta, Crear, editar y eliminar
+![test_ruta](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/test_ruta.jpg)
 ## Test de Viaje, Crear, editar y eliminar
 ## Test de Bus, Crear, editar y eliminar
 
