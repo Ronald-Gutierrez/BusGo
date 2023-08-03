@@ -108,14 +108,6 @@ composer install
 npm install
 ```
 
-### Configurar Entorno
-
-La configuración del entorno se hace en el archivo **.env** pero esé archivo no se puede versionar según las restricciones del archivo **.gitignore**, igualmente en el proyecto hay un archivo de ejemplo  **.env.example** debemos copiarlo con el siguiente comando:
-
-```bash
-cp .env.example .env
-```
-
 Luego es necesario modificar los valores de las variables de entorno para adecuar la configuración a nuestro entorno de desarrollo, por ejemplo los parámetros de conexión a la base de datos.
 
 ### Generar Clave de Seguridad de la Aplicación
