@@ -15,7 +15,8 @@ const cuandoSeHaceClick = function (evento) {
             this.style.background  = "greenyellow"
             datoculto.value = "1"
         }
-        document.getElementById("monto").innerHTML = "S/"+monto 
+        document.getElementById("monto").innerHTML = "S/"+monto
+        document.getElementById("monto_input").value = monto
     }
 }
 // botones es un arreglo así que lo recorremos
@@ -42,6 +43,7 @@ window.Echo.channel('asientos')
                     if(datoculto.value == '1'){
                         monto = monto - parseFloat(botonselec.value);
                         document.getElementById("monto").innerHTML = "S/"+monto 
+                        document.getElementById("monto_input").value = monto 
                     }
                     datoculto.value = "";
                 }
