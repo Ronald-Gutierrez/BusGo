@@ -21,10 +21,10 @@ class ConfirmarreservaController extends Controller
         $ruta = Rutum::where('id_ruta',$viaje[0]['id_ruta'])->paginate();
         $origen = $ruta[0]['origen'];
         $destino = $ruta[0]['destino'];
-        return view('confirmarreserva', compact('id_viaje','informacion_asientos','fecha_inicio','fecha_retorno','origen','destino')); 
+        return view('confirmarreserva', compact('id_viaje','informacion_asientos',
+                                                'fecha_inicio','fecha_retorno',
+                                                'origen','destino')); 
     }
-
-
     public function reservar($id_viaje, Request $informacion_asientos)
     {
         $i = 0;

@@ -15,6 +15,8 @@ class ConfirmardatosController extends Controller
         $ruta = Rutum::where('id_ruta',$viaje[0]['id_ruta'])->paginate();
         $origen = $ruta[0]['origen'];
         $destino = $ruta[0]['destino'];
-        return view('confirmardatos',compact('id_viaje','informacion_asientos','fecha_inicio','fecha_retorno','origen','destino')); 
+        return view('confirmardatos',compact('id_viaje','informacion_asientos',
+                                            'fecha_inicio','fecha_retorno',
+                                            'origen','destino')); 
     }
 }

@@ -20,6 +20,9 @@ class SelectviajeController extends Controller
         $datos = $bus[0];
         $estados = $datos["asientos"];
         $capacidad = $datos["capacidad"];
-        return view('selectviaje',compact('estados','id_viaje','capacidad','fecha_inicio','fecha_retorno','origen','destino'));
+        return view('selectviaje',compact('estados','id_viaje',
+                                        'capacidad','fecha_inicio',
+                                        'fecha_retorno','origen',
+                                        'destino'));
     }
 }

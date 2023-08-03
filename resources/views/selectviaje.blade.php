@@ -26,6 +26,7 @@
     <div style="display: none" id="viaje{{$id_viaje}}"></div>
     <div class="container">
         <form method="GET" action="{{ route('confirmardatos',$id_viaje) }}">
+            <input type="hidden" id="monto_input" name="monto_input" value="">
             <div class="row">
                 <div class="col-md-8">
                     <div class="croquis_bus_general">
