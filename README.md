@@ -246,6 +246,11 @@ Pagina de reserva de asiento
 ## Test de Viaje, Crear, editar y eliminar
 ## Test de Bus, Crear, editar y eliminar
 
+# **Analisis con SonarQube**
+
+![image](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03e57cd5-1c0e-44f0-8361-9cc4b770efd6)
+
+
 # **Estilos de Programación**
 
 ## 1. Declared-Intentions.
