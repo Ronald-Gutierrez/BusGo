@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bus;
 use App\Models\Rutum;
+use App\Models\Viaje;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -26,6 +28,9 @@ class RutumController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $ruta->perPage());
     }
 
+    public function existencia(string $origen, string $destino){
+        return Rutum::select()->where('origen',$origen)->where('destino',$destino)->count();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -45,12 +50,18 @@ class RutumController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Rutum::$rules);
-
-        $rutum = Rutum::create($request->all());
-
-        return redirect()->route('ruta.index')
-            ->with('success', 'Rutum created successfully.');
+        $request->validate(Rutum::$rules);
+        $request['encargado'] = Auth::id();
+        if($this->existencia($request['origen'],$request['destino'])){
+            return redirect()->route('ruta.create')
+                ->with('fail', 'Error, dicha ruta ya existe.');
+        }
+        else{
+            Rutum::create($request->all());
+            return redirect()->route('ruta.index')
+                ->with('success', 'Ruta creada con éxito.');
+        }
+        
     }
 
     /**
@@ -88,12 +99,16 @@ class RutumController extends Controller
      */
     public function update(Request $request, Rutum $rutum)
     {
-        request()->validate(Rutum::$rules);
-
-        $rutum->update($request->all());
-
-        return redirect()->route('ruta.index')
-            ->with('success', 'Rutum updated successfully');
+        $request->validate(Rutum::$rules);
+        if($this->existencia($request['origen'],$request['destino'])){
+            return redirect()->route('ruta.edit',$rutum['id_ruta'])
+                ->with('fail', 'Error, dicha ruta ya existe.');
+        }
+        else{
+            $rutum->update($request->all());
+            return redirect()->route('ruta.index')
+                ->with('success', 'Ruta actualizada con éxito');
+        }
     }
 
     /**
@@ -103,9 +118,20 @@ class RutumController extends Controller
      */
     public function destroy($id)
     {
-        $rutum = Rutum::find($id)->delete();
-
+        $viajesruta = Viaje::where('id_ruta',$id);
+        if($viajesruta->count() > 0){
+            $viajesderuta = $viajesruta->get();
+            foreach ($viajesderuta as $viaje){
+                $busesasignados = Bus::where('id_viaje',$viaje['id_viaje']);
+                if($busesasignados->count() > 0){
+                    $busesasignados->delete();
+                }
+            }
+            $viajesruta->delete();
+        }
+        Rutum::find($id)->delete();
+        
         return redirect()->route('ruta.index')
-            ->with('success', 'Rutum deleted successfully');
+            ->with('success', 'Ruta eliminada con éxito');
     }
 }

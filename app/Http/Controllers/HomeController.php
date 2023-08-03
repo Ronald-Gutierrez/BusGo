@@ -23,7 +23,9 @@ class HomeController extends Controller
 
 
     public function buscar_viajes_cliente(Request $requisitos){
-        $datos = Rutum::select('ruta.origen','ruta.destino','viajes.fecha_inicio','viajes.fecha_retorno','viajes.id_viaje')
+        $datos = Rutum::select('ruta.origen','ruta.destino',
+                'viajes.fecha_inicio','viajes.fecha_retorno',
+                'viajes.id_viaje')
                 ->join('viajes','ruta.id_ruta','=','viajes.id_ruta')
                 ->where('viajes.estado',1);
         if($requisitos['origen'] != ''){

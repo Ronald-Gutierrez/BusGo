@@ -22,41 +22,58 @@
                             <label for="origen" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Origen</label>
                             <select name="origen" id="origen" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
                                 <option value="" disabled selected>Selecciona un origen</option>
-                                <option value="lima">Lima</option>
-                                <option value="arequipa">Arequipa</option>
-                                <option value="cusco">Cusco</option>
-                                <option value="trujillo">Trujillo</option>
-                                <option value="piura">Piura</option>
-                                <option value="chiclayo">Chiclayo</option>
-                                <option value="ica">Ica</option>
-                                <option value="huancayo">Huancayo</option>
-                                <option value="tacna">Tacna</option>
-                                <option value="puno">Puno</option>
+                                <option value="Lima">Lima</option>
+                                <option value="Arequipa">Arequipa</option>
+                                <option value="Cusco">Cusco</option>
+                                <option value="Trujillo">Trujillo</option>
+                                <option value="Piura">Piura</option>
+                                <option value="Chiclayo">Chiclayo</option>
+                                <option value="Ica">Ica</option>
+                                <option value="Huancayo">Huancayo</option>
+                                <option value="Tacna">Tacna</option>
+                                <option value="Puno">Puno</option>
+                                <option value="LaLibertad">La Libertad</option>
+                                <option value="Ucayali">Ucayali</option>
+                                <option value="Lambayeque">Lambayeque</option>
                             </select>
                         </div>
                         <div>
-                            <label for="destino" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Destino</label>
-                            <select name="destino" id="destino" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
+                            <label for="destino"
+                            class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">
+                                Destino
+                            </label>
+                            <select name="destino" id="destino"
+                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full
+                            sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
                                 <option value="" disabled selected>Selecciona un destino</option>
-                                <option value="lima">Lima</option>
-                                <option value="arequipa">Arequipa</option>
-                                <option value="cusco">Cusco</option>
-                                <option value="trujillo">Trujillo</option>
-                                <option value="piura">Piura</option>
-                                <option value="chiclayo">Chiclayo</option>
-                                <option value="ica">Ica</option>
-                                <option value="huancayo">Huancayo</option>
-                                <option value="tacna">Tacna</option>
-                                <option value="puno">Puno</option>
+                                <option value="Lima">Lima</option>
+                                <option value="Arequipa">Arequipa</option>
+                                <option value="Cusco">Cusco</option>
+                                <option value="Trujillo">Trujillo</option>
+                                <option value="Piura">Piura</option>
+                                <option value="Chiclayo">Chiclayo</option>
+                                <option value="Ica">Ica</option>
+                                <option value="Huancayo">Huancayo</option>
+                                <option value="Tacna">Tacna</option>
+                                <option value="Puno">Puno</option>
+                                <option value="LaLibertad">La Libertad</option>
+                                <option value="Ucayali">Ucayali</option>
+                                <option value="Lambayeque">Lambayeque</option>
                             </select>
                         </div>
                         <div>
-                            <label for="fecha_inicio" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de viaje</label>
-                            <input type="date" name="fecha_inicio" id="fecha_inicio" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                            <label for="fecha_inicio" class="block text-sm font-medium text-gray-700
+                            bg-red-200 rounded-md px-2 py-1">Fecha de viaje</label>
+                            <input type="date" name="fecha_inicio" id="fecha_inicio"
+                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500
+                            block w-full sm:text-sm border-gray-300 rounded-md">
                         </div>
                         <div>
-                            <label for="fecha_retorno" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de regreso (opcional)</label>
-                            <input type="date" name="fecha_retorno" id="fecha_retorno" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                            <label for="fecha_retorno" class="block text-sm font-medium text-gray-700
+                            bg-red-200 rounded-md px-2 py-1">Fecha de regreso (opcional)</label>
+                            <input type="date" name="fecha_retorno" id="fecha_retorno"
+                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500
+                            block w-full sm:text-sm border-gray-300 rounded-md">
                         </div>
                         <div>
                             <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Buscar</button>

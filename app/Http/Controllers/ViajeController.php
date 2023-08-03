@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rutum;
+use App\Models\Bus;
 use App\Models\Viaje;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -19,13 +21,19 @@ class ViajeController extends Controller
      */
     public function index()
     {
-        $viajes = Viaje::select('viajes.id_viaje','viajes.fecha_inicio','viajes.fecha_retorno','viajes.estado','viajes.id_ruta')
+        $viajes = Viaje::select('viajes.id_viaje','viajes.fecha_inicio',
+                                'viajes.fecha_retorno','viajes.estado','ruta.origen','ruta.destino')
                 ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
                 ->where('ruta.encargado',Auth::id())
                 ->paginate();
 
         return view('viaje.index', compact('viajes'))
             ->with('i', (request()->input('page', 1) - 1) * $viajes->perPage());
+    }
+    public function existencia(Request $request){
+        return Viaje::where('fecha_inicio','=',$request['fecha_inicio'])
+                ->where('fecha_retorno','=',$request['fecha_retorno'])
+                ->where('id_ruta',$request['id_ruta'])->count();
     }
     public function home()
     {
@@ -42,7 +50,8 @@ class ViajeController extends Controller
     public function create()
     {
         $viaje = new Viaje();
-        return view('viaje.create', compact('viaje'));
+        $rutas = Rutum::where('encargado',Auth::id())->paginate();
+        return view('viaje.create', compact('viaje','rutas'));
     }
 
     /**
@@ -53,12 +62,18 @@ class ViajeController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Viaje::$rules);
-
-        $viaje = Viaje::create($request->all());
-
-        return redirect()->route('viajes.index')
-            ->with('success', 'Viaje created successfully.');
+        $request['estado'] = 0;
+        $request->validate(Viaje::$rules);
+        if($this->existencia($request) > 0){
+            return redirect()->route('viajes.create')
+                ->with('fail',
+                'Error, ya hay uno o más viajes exactamente igual. '.strval($this->existencia($request)));
+        }
+        else{
+            Viaje::create($request->all());
+            return redirect()->route('viajes.index')
+            ->with('success', 'Viaje creado con éxito.');
+        }
     }
 
     /**
@@ -69,7 +84,7 @@ class ViajeController extends Controller
      */
     public function show($id)
     {
-        $viaje = Viaje::find($id);
+        $viaje = Viaje::join('ruta','ruta.id_ruta','=','viajes.id_ruta')->find($id);
 
         return view('viaje.show', compact('viaje'));
     }
@@ -83,8 +98,8 @@ class ViajeController extends Controller
     public function edit($id)
     {
         $viaje = Viaje::find($id);
-
-        return view('viaje.edit', compact('viaje'));
+        $rutas = Rutum::where('encargado',Auth::id())->get();
+        return view('viaje.edit', compact('viaje','rutas'));
     }
 
     /**
@@ -96,12 +111,16 @@ class ViajeController extends Controller
      */
     public function update(Request $request, Viaje $viaje)
     {
-        request()->validate(Viaje::$rules);
-
-        $viaje->update($request->all());
-
-        return redirect()->route('viajes.index')
-            ->with('success', 'Viaje updated successfully');
+        $request->validate(Viaje::$rules);
+        if($this->existencia($request)){
+            return redirect()->route('viajes.edit',$viaje['id_viaje'])
+                ->with('fail', 'Error, ya hay un viaje exactamente igual');
+        }
+        else{
+            $viaje->update($request->all());
+            return redirect()->route('viajes.index')
+                ->with('success', 'Viaje actualizado con éxito');
+        }
     }
     
 
@@ -112,10 +131,13 @@ class ViajeController extends Controller
      */
     public function destroy($id)
     {
-        $viaje = Viaje::find($id)->delete();
-
+        $busesasignados = Bus::where('id_viaje',$id);
+        if(0 < $busesasignados->count()){
+            $busesasignados->delete();
+        }
+        Viaje::find($id)->delete();
         return redirect()->route('viajes.index')
-            ->with('success', 'Viaje deleted successfully');
+            ->with('success', 'Viaje eliminado con éxito');
     }
 
 }

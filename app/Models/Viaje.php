@@ -23,7 +23,6 @@ class Viaje extends Model
 {
     protected $primaryKey = 'id_viaje';
     static $rules = [
-		'id_viaje' => 'required',
 		'fecha_inicio' => 'required',
 		'fecha_retorno' => 'required',
 		'estado' => 'required',

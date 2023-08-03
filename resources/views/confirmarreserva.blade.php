@@ -39,7 +39,7 @@
                 <div class="asientos-desc2">
                     <div class="asientos-monto">
                         <p>Asientos</p>
-                        <p id="monto">S/</p>
+                        <p id="monto">S/{{$informacion_asientos['monto_input']}}</p>
                     </div>
                     <form method="GET" action="{{ route('realizarreserva',$id_viaje) }}">
                         <?php $i=1?>

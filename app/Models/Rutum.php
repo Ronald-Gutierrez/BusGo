@@ -21,10 +21,8 @@ class Rutum extends Model
 {
     protected $primaryKey = 'id_ruta';
     static $rules = [
-		'id_ruta' => 'required',
-		'origen' => 'required',
-		'destino' => 'required',
-		'encargado' => 'required',
+		'origen' => 'required|alpha:ascii',
+		'destino' => 'required|alpha:ascii',
     ];
 
     protected $perPage = 20;

@@ -108,14 +108,6 @@ composer install
 npm install
 ```
 
-### Configurar Entorno
-
-La configuración del entorno se hace en el archivo **.env** pero esé archivo no se puede versionar según las restricciones del archivo **.gitignore**, igualmente en el proyecto hay un archivo de ejemplo  **.env.example** debemos copiarlo con el siguiente comando:
-
-```bash
-cp .env.example .env
-```
-
 Luego es necesario modificar los valores de las variables de entorno para adecuar la configuración a nuestro entorno de desarrollo, por ejemplo los parámetros de conexión a la base de datos.
 
 ### Generar Clave de Seguridad de la Aplicación
@@ -253,6 +245,11 @@ Pagina de reserva de asiento
 ![test_ruta](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/test_ruta.jpg)
 ## Test de Viaje, Crear, editar y eliminar
 ## Test de Bus, Crear, editar y eliminar
+
+# **Analisis con SonarQube**
+
+![image](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03e57cd5-1c0e-44f0-8361-9cc4b770efd6)
+
 
 # **Estilos de Programación**
 
