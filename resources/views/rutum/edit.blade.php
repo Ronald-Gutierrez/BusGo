@@ -13,10 +13,16 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Rutum</span>
+                        <span class="card-title">Editando ruta</span>
                     </div>
+                    @if ($message = Session::get('fail'))
+                        <div class="alert alert-success" style="color:#FF0000;background:#FFA9A9;">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     <div class="card-body">
-                        <form method="POST" action="{{ route('ruta.update',['rutum' => $rutum->id_ruta]) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('ruta.update',['rutum' => $rutum->id_ruta]) }}"
+                        role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
