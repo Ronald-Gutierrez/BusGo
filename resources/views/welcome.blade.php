@@ -54,37 +54,43 @@
     <div class="bg-gray-100 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-lg shadow-lg p-6">
-                <form action="#" method="POST" class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+                <form action="{{route('login')}}" method="GET" class="grid grid-cols-1 sm:grid-cols-4 gap-6">
                     <div>
                         <label for="origen" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Origen</label>
                         <select name="origen" id="origen" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
                             <option value="" disabled selected>Selecciona un origen</option>
-                            <option value="lima">Lima</option>
-                            <option value="arequipa">Arequipa</option>
-                            <option value="cusco">Cusco</option>
-                            <option value="trujillo">Trujillo</option>
-                            <option value="piura">Piura</option>
-                            <option value="chiclayo">Chiclayo</option>
-                            <option value="ica">Ica</option>
-                            <option value="huancayo">Huancayo</option>
-                            <option value="tacna">Tacna</option>
-                            <option value="puno">Puno</option>
+                            <option value="Lima">Lima</option>
+                            <option value="Arequipa">Arequipa</option>
+                            <option value="Cusco">Cusco</option>
+                            <option value="Trujillo">Trujillo</option>
+                            <option value="Piura">Piura</option>
+                            <option value="Chiclayo">Chiclayo</option>
+                            <option value="Ica">Ica</option>
+                            <option value="Huancayo">Huancayo</option>
+                            <option value="Tacna">Tacna</option>
+                            <option value="Puno">Puno</option>
+                            <option value="LaLibertad">La Libertad</option>
+                            <option value="Ucayali">Ucayali</option>
+                            <option value="Lambayeque">Lambayeque</option>
                         </select>
                     </div>
                     <div>
                         <label for="destino" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Destino</label>
                         <select name="destino" id="destino" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
-                            <option value="" disabled selected>Selecciona un destino</option>
-                            <option value="lima">Lima</option>
-                            <option value="arequipa">Arequipa</option>
-                            <option value="cusco">Cusco</option>
-                            <option value="trujillo">Trujillo</option>
-                            <option value="piura">Piura</option>
-                            <option value="chiclayo">Chiclayo</option>
-                            <option value="ica">Ica</option>
-                            <option value="huancayo">Huancayo</option>
-                            <option value="tacna">Tacna</option>
-                            <option value="puno">Puno</option>
+                            <option value="" disabled selected>Selecciona un origen</option>
+                            <option value="Lima">Lima</option>
+                            <option value="Arequipa">Arequipa</option>
+                            <option value="Cusco">Cusco</option>
+                            <option value="Trujillo">Trujillo</option>
+                            <option value="Piura">Piura</option>
+                            <option value="Chiclayo">Chiclayo</option>
+                            <option value="Ica">Ica</option>
+                            <option value="Huancayo">Huancayo</option>
+                            <option value="Tacna">Tacna</option>
+                            <option value="Puno">Puno</option>
+                            <option value="LaLibertad">La Libertad</option>
+                            <option value="Ucayali">Ucayali</option>
+                            <option value="Lambayeque">Lambayeque</option>
                         </select>
                     </div>
                     <div>
@@ -115,7 +121,7 @@
                     <div>
                         <h2 class="text-4xl font-bold mb-4">Viajes en autobús en todo el Peru</h2>
                         <p class="text-gray-800">Reserva boletos de autobús en línea en BusGo y disfruta de una experiencia de viaje conveniente. Explora rutas en varias ciudades y encuentra los mejores precios de boletos. ¡Descubre los beneficios de viajar en BusGo!</p>
-                        <a href="#" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded mt-4 inline-block">Reserva ahora</a>
+                        <a href="/login" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded mt-4 inline-block">Reserva ahora</a>
                     </div>
                 </div>
             </div>
