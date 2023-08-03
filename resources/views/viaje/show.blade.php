@@ -15,12 +15,10 @@
                             <span class="card-title">{{ __('Show') }} Viaje</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('viajes.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('viajes.index') }}"> {{ __('Atrás') }}</a>
                         </div>
                     </div>
-
                     <div class="card-body">
-                        
                         <div class="form-group">
                             <strong>Id Viaje:</strong>
                             {{ $viaje->id_viaje }}
@@ -35,13 +33,16 @@
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $viaje->estado }}
+                            @if ($viaje->estado == 1)
+                                En espera
+                            @else
+                                Finalizado
+                            @endif
                         </div>
                         <div class="form-group">
-                            <strong>Id Ruta:</strong>
-                            {{ $viaje->id_ruta }}
+                            <strong>Ruta:</strong>
+                            {{ $viaje->origen }} - {{ $viaje->destino }}
                         </div>
-
                     </div>
                 </div>
             </div>
