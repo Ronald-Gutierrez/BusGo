@@ -21,7 +21,9 @@ class BusController extends Controller
      */
     public function index()
     {
-        $buses = Bus::select('buses.id_bus','buses.num_bus','buses.capacidad','buses.estado','buses.id_viaje','buses.asientos')
+        $buses = Bus::select('buses.id_bus','buses.num_bus',
+                            'buses.capacidad','buses.estado',
+                            'buses.id_viaje','buses.asientos')
                 ->join('viajes','buses.id_viaje','=','viajes.id_viaje')
                 ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
                 ->where('ruta.encargado',Auth::id())
@@ -36,10 +38,24 @@ class BusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function actualizar_bus_viaje(int $idviaje){
+        $viaje = Viaje::find($idviaje);
+        if(Bus::where('id_viaje',$idviaje)->where('estado',1)->count()){
+            $viaje->update(['estado' => 1]);
+        }
+        else{
+            $viaje->update(['estado' => 0]);
+        }
+    }
     public function create()
     {
         $bus = new Bus();
-        return view('bus.create', compact('bus'));
+        $viajes = Viaje::select('viajes.id_viaje','viajes.fecha_inicio','viajes.fecha_retorno'
+                    ,'ruta.origen','ruta.destino')
+                    ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
+                    ->where('ruta.encargado',Auth::id())
+                    ->get();
+        return view('bus.create', compact('bus','viajes'));
     }
 
     /**
@@ -50,12 +66,18 @@ class BusController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Bus::$rules);
-
-        $bus = Bus::create($request->all());
-
+        $request->validate(Bus::$rules);
+        $capacidad = intval($request['capacidad']);
+        $asientos = "[";
+        for($i=0; $i < $capacidad; $i++){
+            $asientos = $asientos.'1';
+        }
+        $asientos = $asientos."]";
+        $request['asientos'] = $asientos;
+        Bus::create($request->all());
+        $this->actualizar_bus_viaje(intval($request['id_viaje']));
         return redirect()->route('buses.index')
-            ->with('success', 'Bus created successfully.');
+            ->with('success', 'Bus registrado con éxito.');
     }
 
     /**
@@ -80,8 +102,12 @@ class BusController extends Controller
     public function edit($id)
     {
         $bus = Bus::find($id);
-
-        return view('bus.edit', compact('bus'));
+        $viajes = Viaje::select('viajes.id_viaje','viajes.fecha_inicio',
+        'viajes.fecha_retorno','ruta.origen','ruta.destino')
+                    ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
+                    ->where('ruta.encargado',Auth::id())
+                    ->get();
+        return view('bus.edit', compact('bus','viajes'));
     }
 
     /**
@@ -93,12 +119,29 @@ class BusController extends Controller
      */
     public function update(Request $request, Bus $bus)
     {
-        request()->validate(Bus::$rules);
-
+        $request->validate(Bus::$rules);
+        $nuevacapacidad = intval($request['capacidad']);
+        $antiguacapacidad =  intval($bus->capacidad);
+        $asientos = $bus->asientos;
+        if($antiguacapacidad < $nuevacapacidad){
+            $asientos = substr($asientos, 0, -1);
+            for($i = $antiguacapacidad; $i < $nuevacapacidad; $i++){
+                $asientos = $asientos.'1';
+            }
+            $asientos = $asientos."]";
+        }
+        elseif($antiguacapacidad > $nuevacapacidad){
+            $asientos = substr($asientos, 0, -1);
+            for($i = $nuevacapacidad; $i < $antiguacapacidad; $i++){
+                $asientos = substr($asientos, 0, -1);
+            }
+            $asientos = $asientos."]";
+        }
+        $request['asientos'] = $asientos;
         $bus->update($request->all());
-
+        $this->actualizar_bus_viaje(intval($request['id_viaje']));
         return redirect()->route('buses.index')
-            ->with('success', 'Bus updated successfully');
+            ->with('success', 'Bus actualizado de forma exitosa');
     }
 
     /**
@@ -108,9 +151,8 @@ class BusController extends Controller
      */
     public function destroy($id)
     {
-        $bus = Bus::find($id)->delete();
-
+        Bus::find($id)->delete();
         return redirect()->route('buses.index')
-            ->with('success', 'Bus deleted successfully');
+            ->with('success', 'Bus eliminado de forma exitosa');
     }
 }

@@ -1,7 +1,7 @@
 @extends('layoutsBusiness.app')
 
 @section('template_title')
-    {{ $rutum->name ?? __('Show')}}"}} Rutum 
+    {{ $rutum->name ?? __('Show')}}"}} Rutum
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Rutum</span>
+                            <span class="card-title">Mostrando datos de ruta</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('ruta.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('ruta.index') }}"> {{ __('Atrás') }}</a>
                         </div>
                     </div>
 
@@ -32,11 +32,6 @@
                             <strong>Destino:</strong>
                             {{ $rutum->destino }}
                         </div>
-                        <div class="form-group">
-                            <strong>Encargado:</strong>
-                            {{ $rutum->encargado }}
-                        </div>
-
                     </div>
                 </div>
             </div>

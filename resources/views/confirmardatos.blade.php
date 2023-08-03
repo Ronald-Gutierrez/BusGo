@@ -38,9 +38,10 @@
                 <div class="asientos-desc2">
                     <div class="asientos-monto">
                         <p>Asientos</p>
-                        <p id="monto">S/</p>
+                        <p id="monto">S/{{$informacion_asientos['monto_input']}}</p>
                     </div>
                     <form method="GET" action="{{ route('confirmarreserva',$id_viaje) }}">
+                        <input type="hidden" id="monto_input" name="monto_input" value="{{$informacion_asientos['monto_input']}}">
                         <?php $i=1?>
                         @while($i < 31)
                             <input id="asiento{{$i}}" name="asiento{{$i}}" type="hidden" value="{{$informacion_asientos['asiento'.strval($i)]}}">
