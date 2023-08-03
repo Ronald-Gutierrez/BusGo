@@ -12,7 +12,9 @@ use App\Models\Bus;
 class ReservaController extends Controller
 {
     protected function obtener_reservas(){
-        $datos = Reserva::select('viajes.id_viaje','reserva.num_asiento','ruta.origen','ruta.destino','viajes.fecha_inicio','viajes.fecha_retorno')
+        $datos = Reserva::select('viajes.id_viaje','reserva.num_asiento',
+                    'ruta.origen','ruta.destino',
+                    'viajes.fecha_inicio','viajes.fecha_retorno')
                     ->join('viajes','reserva.id_viaje','=','viajes.id_viaje')
                     ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
                     ->where('reserva.id_cliente',Auth::id());
