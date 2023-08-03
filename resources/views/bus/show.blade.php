@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Capacidad:</strong>
-                            {{ $bus->capacidad }}
+                            {{ $bus->capacidad }} asientos
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
@@ -40,11 +40,6 @@
                             <strong>Id Viaje:</strong>
                             {{ $bus->id_viaje }}
                         </div>
-                        <div class="form-group">
-                            <strong>Asientos:</strong>
-                            {{ $bus->asientos }}
-                        </div>
-
                     </div>
                 </div>
             </div>

@@ -22,12 +22,10 @@ class Bus extends Model
 {
     protected $primaryKey = 'id_bus';
     static $rules = [
-		'id_bus' => 'required',
 		'num_bus' => 'required',
 		'capacidad' => 'required',
 		'estado' => 'required',
 		'id_viaje' => 'required',
-		'asientos' => 'required',
     ];
 
     protected $perPage = 20;
