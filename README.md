@@ -264,20 +264,26 @@ Pagina de reserva de asiento
 | 8  | Crear una rutas dos veces con las mismas caracteristicas |  No Válido  | Ruta_ Arequipa - Lima  | Alerta de Error - muestra en la pantalla |
 | 9  | Crear y Asignar bus sin viajes ni rutas  | No Válido | - Origen: null - Destino: null - Fecha Inicio: null23, Fecha Retorno: null,  | Alerta de Error - muestra en la pantalla  |
 
-## CLIENTE
+## Usuario
 ### *Casos Válidos*
-* Registrarse/Ingresar como cliente
+* El usuario pordra registrarse/ingresar como cliente
+* El usuario podra hacer la busqueda de un viaje disponible.
+* El usuario podra seleccionar un asiento para reservarlo.
+* El usuario podra cancelar su reserva de asiento.
 ### *Casos no Válidos*
-| ID |  Tipo de Clase| Valores de Prueba| Resultado Esperado |
-|----|-----------|-----------|-----------|
-| 1  | Celda 2   | Celda 3   | Celda 4   |
-| 2  | Celda 6   | Celda 7   | Celda 8   |
-| 3  | Celda 10  | Celda 11  | Celda 12  |
-| 4  | Celda 14  | Celda 15  | Celda 16  |
-| 5  | Celda 14  | Celda 15  | Celda 16  |
-| 6  | Celda 14  | Celda 15  | Celda 16  |
-| 7  | Celda 14  | Celda 15  | Celda 16  |
-| 8  | Celda 14  | Celda 15  | Celda 16  |
+* El usuario no podra avanzar a la pestaña confirmar datos, si no a seleccionado minimo un asiento.
+* El usuario no podra avanzar a la pesataña de confirmar reserva, si no a aceptado los terminos y condiciones.
+
+
+| ID |  Clase | Tipo de Clase| Valores de Prueba| Resultado Esperado |
+|----|-----------|-----------|-----------|-----------|
+| 1  | Registrarse/ingresar como cliente  | Válido | Nombre: Pedro Aguilar, Correo: paguilar@gmail.com, Tipo de usuario: Cliente, Contraseña: pe@aguilar, Confirmar Contraseña: pe@aguilar  | Ingreso al menu de Cliente  |
+| 2  | Busqueda de un viaje disponible    | Válido | Origen: Arequia, Destino: Lima: Fecha de viaje: 23/07/2023, Fecha de regreso: null    | Se muestran todos los viajes de las diferentes empresas, segun la busqueda   |      
+| 3  | Seleccionar un asiento para reservarlo  | Válido | Seleccion de asiento: 12,34,56   | Muestra el monto de cada asiento y el total  |
+| 4  | Cancelar su reserva de asiento | Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Origen: Arequipa, Destino: Lima, Número de Asiento: 12,34,56   | Se cancela la reserva y desaparece del apartado "Ver reservas"  |
+| 5  |  Confimar datos, sin seleccion de asientos  | No Válido |  Seleccion de asiento: null | Aparece un mensaje de que no selecciono ningun asiento y se redirige a la misma pestaña  |
+| 6  | Comfimar datos, sin seleccion de Términos y Condiciones  | No Válido | Términos y condiciones: checkNull   | Aparece una alerta, donde te dice que aceptes los Términos y Condiciones  |
+
 
 # **Pruebas Unitarias**
 
