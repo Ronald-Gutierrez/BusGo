@@ -237,14 +237,55 @@ Pagina de seleccion de destinos
 Pagina de reserva de asiento
 
 ![reserva_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/20309391-99a1-48fe-a481-332fc0e0502d)
+# **Generación de Casos de Prueba - Caja Negra**
+
+## EMPRESA
+### *Casos Válidos*
+* Registarse/Ingresar como Empresa.
+* La empresa podra crear/modificar/eliminar Rutas (Se elimina en cascada).
+* La empresa podra crear/modificar/eliminar Viajes (Se elimina en cascada).
+* La empresa podra crear/modificar/eliminar Buses.
+* La empresa podra asignar un viaje a una ruta.
+* La empresa podra asignar un bus a una viaje.
+### *Casos no Válidos*
+* La empresa no podra crear viajes repetidos.
+* La empresa no podra crear una rutas dos veces con las mismas caracteristicas.
+* La empresa no podra asignar un bus sino hay una ruta y viaje disponible.
+
+| ID |  Clase | Tipo de Clase| Valores de Prueba| Resultado Esperado |
+|----|-----------|-----------|-----------|-----------|
+| 1  | Registarse/Ingresar como Empresa   | Válido | Nombre: Bus-Paraiso, Correo: busparaiso@gmail.com, Tipo de usuario: Emprea, RUC: 20844473611, Contraseña: bus@parso, Confirmar Contraseña: bus@parso   | Ingreso al menu de Empresa  |
+| 2  | Crear un ruta   | Válido | - Origen: Arequipa - Destino: Lima    | Creación del ruta exitoso - muestra en la pantalla   |      
+| 3  | Crear una viaje   | Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima   | Creación de la viaje exitoso - muestra en la pantalla  |
+| 4  | Crear un bus  | Válido | Placa: 3422, Capacidad: 40, Estado: Activo, Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Creación del bus  exitoso - muestra en la pantalla  |
+| 5  | Asignar viaje a una ruta  | Válido | Ruta_ Arequipa - Lima  | Asignación de la ruta - muestra en la pantalla  |
+| 6  | Asignar un bus a un viaje  | Válido | Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Asignación del bus - muestra en la pantalla  |
+| 7  | Crear viaje repetido  | No Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima | Alerta de Error - muestra en la pantalla  |
+| 8  | Crear una rutas dos veces con las mismas caracteristicas |  No Válido  | Ruta_ Arequipa - Lima  | Alerta de Error - muestra en la pantalla |
+| 9  | Crear y Asignar bus sin viajes ni rutas  | No Válido | - Origen: null - Destino: null - Fecha Inicio: null23, Fecha Retorno: null,  | Alerta de Error - muestra en la pantalla  |
+
+## CLIENTE
+### *Casos Válidos*
+* Registrarse/Ingresar como cliente
+### *Casos no Válidos*
+| ID |  Tipo de Clase| Valores de Prueba| Resultado Esperado |
+|----|-----------|-----------|-----------|
+| 1  | Celda 2   | Celda 3   | Celda 4   |
+| 2  | Celda 6   | Celda 7   | Celda 8   |
+| 3  | Celda 10  | Celda 11  | Celda 12  |
+| 4  | Celda 14  | Celda 15  | Celda 16  |
+| 5  | Celda 14  | Celda 15  | Celda 16  |
+| 6  | Celda 14  | Celda 15  | Celda 16  |
+| 7  | Celda 14  | Celda 15  | Celda 16  |
+| 8  | Celda 14  | Celda 15  | Celda 16  |
+
 # **Pruebas Unitarias**
 
 ## Test de Usuario, Cliente y Empresa
 ![test_user](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/test_user.jpg)
 ## Test de Ruta, Crear, editar y eliminar
 ![test_ruta](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/test_ruta.jpg)
-## Test de Viaje, Crear, editar y eliminar
-## Test de Bus, Crear, editar y eliminar
+
 
 # **Analisis con SonarQube**
 
