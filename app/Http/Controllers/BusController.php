@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bus;
-use App\Models\Rutum;
+use App\Models\Reserva;
 use App\Models\Viaje;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -38,13 +38,13 @@ class BusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function actualizar_bus_viaje(int $idviaje){
-        $viaje = Viaje::find($idviaje);
-        if(Bus::where('id_viaje',$idviaje)->where('estado',1)->count()){
-            $viaje->update(['estado' => 1]);
+    public function actualizar_bus_viaje(int $id_viaje){
+        $viaje = Viaje::find($id_viaje);
+        if(Bus::where('id_viaje',$id_viaje)->where('estado','1')->count()){
+            $viaje->update(['estado' => '1']);
         }
         else{
-            $viaje->update(['estado' => 0]);
+            $viaje->update(['estado' => '0']);
         }
     }
     public function create()
@@ -68,11 +68,11 @@ class BusController extends Controller
     {
         $request->validate(Bus::$rules);
         $capacidad = intval($request['capacidad']);
-        $asientos = "[";
+        $asientos = "".chr(34);
         for($i=0; $i < $capacidad; $i++){
             $asientos = $asientos.'1';
         }
-        $asientos = $asientos."]";
+        $asientos = $asientos.chr(34);
         $request['asientos'] = $asientos;
         Bus::create($request->all());
         $this->actualizar_bus_viaje(intval($request['id_viaje']));
@@ -102,6 +102,11 @@ class BusController extends Controller
     public function edit($id)
     {
         $bus = Bus::find($id);
+        $reservasasignados = Reserva::where('id_bus',$id)->count();
+        if($reservasasignados){
+            return redirect()->route('viajes.index')
+            ->with('fail', 'Ya hay reservas hechas ('.strval($reservasasignados).')');
+        }
         $viajes = Viaje::select('viajes.id_viaje','viajes.fecha_inicio',
         'viajes.fecha_retorno','ruta.origen','ruta.destino')
                     ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
@@ -128,14 +133,14 @@ class BusController extends Controller
             for($i = $antiguacapacidad; $i < $nuevacapacidad; $i++){
                 $asientos = $asientos.'1';
             }
-            $asientos = $asientos."]";
+            $asientos = $asientos.chr(34);
         }
         elseif($antiguacapacidad > $nuevacapacidad){
             $asientos = substr($asientos, 0, -1);
             for($i = $nuevacapacidad; $i < $antiguacapacidad; $i++){
                 $asientos = substr($asientos, 0, -1);
             }
-            $asientos = $asientos."]";
+            $asientos = $asientos.chr(34);
         }
         $request['asientos'] = $asientos;
         $bus->update($request->all());
@@ -151,6 +156,11 @@ class BusController extends Controller
      */
     public function destroy($id)
     {
+        $reservasasignados = Bus::where('id_bus',$id)->count();
+        if($reservasasignados){
+            return redirect()->route('viajes.index')
+            ->with('fail', 'Ya hay reservas hechas ('.strval($reservasasignados).')');
+        }
         Bus::find($id)->delete();
         return redirect()->route('buses.index')
             ->with('success', 'Bus eliminado de forma exitosa');
