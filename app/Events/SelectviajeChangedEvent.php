@@ -20,15 +20,15 @@ class SelectviajeChangedEvent implements ShouldBroadcast
      /**
      * @var string
      */
-    public $idviaje;
+    public $idbus;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($idviaje, $datos)
+    public function __construct($idbus, $datos)
     {
         $this->estados = $datos;
-        $this->idviaje = $idviaje;
+        $this->idbus = $idbus;
     }
 
     /**

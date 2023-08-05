@@ -30,13 +30,13 @@ botones.forEach(boton => {
 
 window.Echo.channel('asientos')
     .listen('SelectviajeChangedEvent',(e)=>{
-    let viajeselec = document.getElementById("viaje"+e.idviaje); 
+    let viajeselec = document.getElementById("bus"+e.idbus); 
     if(botones.length != 0 && viajeselec != null){
         for(let i = 0; i<botones.length; i++){
             let s = i+1;
             let idboton = s.toString();
             let botonselec = document.getElementById(idboton);
-            if(e.estados[i+2] == '0' && botonselec.value != "reservado"){
+            if(e.estados[i] == '0' && botonselec.value != "reservado"){
                 let id_oculto = "asiento"+botonselec.id;
                 let datoculto = document.getElementById(id_oculto);
                 if(datoculto != null){
@@ -51,7 +51,7 @@ window.Echo.channel('asientos')
                 botonselec.style.background = "red";
                 botonselec.setAttribute("data-precio","Ocupado");
             }
-            if(e.estados[i+2] == '1' && botonselec.value == "reservado"){
+            if(e.estados[i] == '1' && botonselec.value == "reservado"){
                 let id_oculto = "asiento"+botonselec.id;
                 let datoculto = document.getElementById(id_oculto);
                 datoculto.value = "";
