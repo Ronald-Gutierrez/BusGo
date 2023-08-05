@@ -29,7 +29,10 @@ class RutumController extends Controller
     }
 
     public function existencia(string $origen, string $destino){
-        return Rutum::select()->where('origen',$origen)->where('destino',$destino)->count();
+        return Rutum::select()->where('origen',$origen)
+        ->where('destino',$destino)
+        ->where('encargado',Auth::id())
+        ->count();
     }
     /**
      * Show the form for creating a new resource.
@@ -120,14 +123,8 @@ class RutumController extends Controller
     {
         $viajesruta = Viaje::where('id_ruta',$id);
         if($viajesruta->count() > 0){
-            $viajesderuta = $viajesruta->get();
-            foreach ($viajesderuta as $viaje){
-                $busesasignados = Bus::where('id_viaje',$viaje['id_viaje']);
-                if($busesasignados->count() > 0){
-                    $busesasignados->delete();
-                }
-            }
-            $viajesruta->delete();
+            return redirect()->route('ruta.index')
+            ->with('fail', 'Se requieren eliminar algunos viajes antes ('.strval($viajesruta->count()).')');
         }
         Rutum::find($id)->delete();
         
