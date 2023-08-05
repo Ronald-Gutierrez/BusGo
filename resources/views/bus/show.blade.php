@@ -25,7 +25,7 @@
                             {{ $bus->id_bus }}
                         </div>
                         <div class="form-group">
-                            <strong>Num Bus:</strong>
+                            <strong>Placa:</strong>
                             {{ $bus->num_bus }}
                         </div>
                         <div class="form-group">

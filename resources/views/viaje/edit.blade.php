@@ -21,7 +21,7 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <form method="POST" action="{{ route('viajes.update', ['viaje' => $viaje->id_viaje]) }}"
+                        <form method="POST" action="{{ route('viajes.update',['viaje' => $viaje->id_viaje]) }}"
                         role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf

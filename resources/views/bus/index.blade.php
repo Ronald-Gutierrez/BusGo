@@ -49,7 +49,7 @@
                                             <td>{{ ++$i }}</td>
 											<td>{{ $bus->num_bus }}</td>
 											<td>{{ $bus->capacidad }}</td>
-                                            @if($bus->estado)
+                                            @if($bus->estado == '1')
                                                 <td>Activo</td>
                                             @else
                                                 <td>Inactivo</td>

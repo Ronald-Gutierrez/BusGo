@@ -90,14 +90,20 @@
                                         <a href="{{ route('login') }}" class="font-semibold text-xl">Ingresar</a>
 
                                         @if (Route::has('register'))
-                                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-xl">Registrate</a>
-                                        @endif                        
+                                            <a href="{{ route('register') }}"
+                                            class="ml-4 font-semibold text-xl">
+                                                Registrate
+                                            </a>
+                                        @endif
                                     @endauth
                                 </div>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" style="color: white;" class=" ml-4 font-semibold text-xl nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" style="color: white;"
+                                class=" ml-4 font-semibold text-xl nav-link dropdown-toggle"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" 
+                                aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 

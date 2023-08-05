@@ -7,7 +7,8 @@
     <title>Bus</title>
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <script src="{{ asset('js/script.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> <!-- Agrega el enlace al archivo JS de SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Agrega el enlace al archivo JS de SweetAlert -->
 </head>
 
 <body>
@@ -41,13 +42,17 @@
                         <p>Asientos</p>
                         <p id="monto">S/{{$informacion_asientos['monto_input']}}</p>
                     </div>
-                    <form method="GET" action="{{ route('realizarreserva',$id_viaje) }}">
-                        <?php $i=1?>
-                        @while($i < 31)
-                            <input id="asiento{{$i}}" name="asiento{{$i}}" type="hidden" value="{{$informacion_asientos['asiento'.strval($i)]}}">
+                    <form method="GET" action="{{route('realizarreserva',[$id_viaje,$id_bus]) }}">
+                        <?php $i=0?>
+                        @while($i < $capacidad)
+                            <input id="asiento{{$i+1}}" name="asiento{{$i+1}}"
+                            type="hidden" value="{{$informacion_asientos['asiento'.strval($i+1)]}}">
                             <?php ++$i?>
                         @endwhile
-                        <button type="submit" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;">Continuar</button>
+                        <button type="submit" class="button-reservar"
+                        style="font-size: 20px; width: 400px; height: 50px;">
+                            Continuar
+                        </button>
                     </form>
                 </div>
             </div>

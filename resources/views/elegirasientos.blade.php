@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    @if ($message = Session::get('fail'))
+        <div class="alert alert-success" style="color:#FF0000;background:#FFA9A9;">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
     <div class="container justify-content-center">
         <div class="d-flex mb-5">
             <div class="btn-tab arrow arrow-color">
@@ -23,10 +28,11 @@
             </div>
         </div>
     </div>
-    <div style="display: none" id="viaje{{$id_viaje}}"></div>
+    <div style="display: none" id="bus{{$id_bus}}"></div>
     <div class="container">
-        <form method="GET" action="{{ route('confirmardatos',$id_viaje) }}">
-            <input type="hidden" id="monto_input" name="monto_input" value="">
+                    
+        <form method="GET" action="{{ route('confirmardatos',[$id_viaje, $id_bus]) }}">
+            <input type="hidden" id="monto_input" name="monto_input" value="0">
             <div class="row">
                 <div class="col-md-8">
                     <div class="croquis_bus_general">
@@ -34,27 +40,35 @@
                             <div class="column">
                                 <?php $i = 0 ?>
                                 @while ($i < $capacidad)
+                                    <input id="asiento{{$i+1}}" name="asiento{{$i+1}}" type="hidden" value="">
                                     <?php if($i % 8 == 0 && $i!=0){?>
                                         </div>
                                         <div class="column">
                                     <?php }?>
                                     <?php if($i % 16 == 0 && $i!=0){?>
                                         <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
-                                        <div class="seatempty col4"></div> 
-                                        <div class="seatempty col4"></div> 
+                                        <div class="seatempty col4"></div>
+                                        <div class="seatempty col4"></div>
                                         <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
-                                        <div class="seatempty col4"></div> 
-                                        <div class="seatempty col4"></div> 
+                                        <div class="seatempty col4"></div>
+                                        <div class="seatempty col4"></div>
                                         <img class="h-8 w-auto" src="{{ asset('img/svg/tv.svg') }}" alt="tv" >
                                         </div>
                                         <div class="column">
                                     <?php }?>
-                                    <?php if($estados[$i+2] == '0'){ ?>
-                                        <button type="button" class="seat col4 asientoelegible" id="{{$i+1}}" value="reservado" data-bs-toggle="tooltip" data-precio="Ocupado">{{$i+1}}</button>
+                                    <?php if($estados[$i] == '0'){ ?>
+                                        <button type="button"
+                                            class="seat col4 asientoelegible" id="{{$i+1}}"
+                                            value="reservado" data-bs-toggle="tooltip" data-precio="Ocupado">
+                                            {{$i+1}}
+                                        </button>
                                     <?php }else{?>
-                                        <button type="button" class="seat col4 asientoelegible" id="{{$i+1}}" data-bs-toggle="tooltip" data-precio="120.00" value="120">{{$i+1}}</button>
+                                        <button type="button"
+                                        class="seat col4 asientoelegible" id="{{$i+1}}"
+                                        data-bs-toggle="tooltip" data-precio="120.00" value="120">
+                                            {{$i+1}}
+                                        </button>
                                     <?php }?>
-                                        <input id="asiento{{$i+1}}" name="asiento{{$i+1}}" type="hidden" value="">
                                     <?php ++$i ?>
                                 @endwhile
                             </div>
@@ -83,7 +97,7 @@
                         </div>
                         <br>
                         <div class="card-propio">
-                            <span class="card-propio__title">Caracteristicas</span>     
+                            <span class="card-propio__title">Caracteristicas</span>
                             <div class="columna_caracteristica">
                                 <div class="imagen-lateral-carac">
                                     <img src="{{ asset('img/svg/mascotas.svg') }}" style="width: 40px;">
@@ -112,7 +126,7 @@
                                     <p>Baño urinario</p>
                                 </div>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                 </div>
             </div>

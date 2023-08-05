@@ -30,8 +30,13 @@
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <form action="/busquedareservas" method="GET" class="grid grid-cols-1 sm:grid-cols-4 gap-6">
                     <div>
-                        <label for="origen" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Origen</label>
-                        <select name="origen" id="origen" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
+                        <label for="origen" class="block text-sm font-medium text-gray-700
+                        bg-red-200 rounded-md px-2 py-1">
+                            Origen
+                        </label>
+                        <select name="origen" id="origen" class="mt-1 focus:ring-indigo-500
+                        focus:border-indigo-500 block w-full sm:text-sm border-gray-300
+                        rounded-md placeholder-gray-400">
                             <option value="" disabled selected>Selecciona un origen</option>
                             <option value="lima">Lima</option>
                             <option value="arequipa">Arequipa</option>
@@ -46,8 +51,13 @@
                         </select>
                     </div>
                     <div>
-                        <label for="destino" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Destino</label>
-                        <select name="destino" id="destino" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder-gray-400">
+                        <label for="destino" class="block text-sm font-medium text-gray-700 bg-red-200
+                        rounded-md px-2 py-1">
+                            Destino
+                        </label>
+                        <select name="destino" id="destino" class="mt-1 focus:ring-indigo-500
+                        focus:border-indigo-500 block w-full sm:text-sm border-gray-300
+                        rounded-md placeholder-gray-400">
                             <option value="" disabled selected>Selecciona un destino</option>
                             <option value="lima">Lima</option>
                             <option value="arequipa">Arequipa</option>
@@ -62,16 +72,36 @@
                         </select>
                     </div>
                     <div>
-                        <label for="fecha_inicio" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de viaje</label>
-                        <input type="date" name="fecha_inicio" id="fecha_inicio" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <label for="fecha_inicio" class="block text-sm font-medium text-gray-700
+                        bg-red-200 rounded-md px-2 py-1">
+                            Fecha de viaje
+                        </label>
+                        <input type="date" name="fecha_inicio" id="fecha_inicio" class="mt-1
+                        focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm
+                        border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label for="fecha_retorno" class="block text-sm font-medium text-gray-700 bg-red-200 rounded-md px-2 py-1">Fecha de regreso (opcional)</label>
-                        <input type="date" name="fecha_retorno" id="fecha_retorno" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                        <label for="fecha_retorno" class="block text-sm font-medium text-gray-700
+                        bg-red-200 rounded-md px-2 py-1">
+                            Fecha de regreso (opcional)
+                        </label>
+                        <input type="date" name="fecha_retorno" id="fecha_retorno" class="mt-1
+                        focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm
+                        border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Buscar</button>
-                        <a href="/home" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ver viajes</a>
+                        <button type="submit" class="inline-flex items-center px-4 py-2 border
+                        border-transparent text-base font-medium rounded-md shadow-sm text-white
+                        bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2
+                        focus:ring-indigo-500">
+                            Buscar
+                        </button>
+                        <a href="/home" class="inline-flex items-center px-4 py-2 border
+                        border-transparent text-base font-medium rounded-md shadow-sm text-white
+                        bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2
+                        focus:ring-indigo-500">
+                            Ver viajes
+                        </a>
                     </div>
                 </form>
             </div>
@@ -85,6 +115,7 @@
                         <th>Origen</th>
                         <th>Destino</th>
                         <th>Numero de Asiento</th>
+                        <th>Placa de Bus</th>
                         <th>Fecha de Salida</th>
                         <th>Fecha de Retorno</th>
                         <th>Cancelar reserva</th>
@@ -96,9 +127,10 @@
                             <td>{{ $info->origen }}</td>
                             <td>{{ $info->destino }}</td>
                             <td>{{ $info->num_asiento }}</td>
+                            <td>{{ $info->num_bus }}</td>
                             <td>{{ $info->fecha_inicio }}</td>
                             <td>{{ $info->fecha_retorno }}</td>
-                            <td><a href="/cancelarreserva/{{$info->id_viaje}}/{{$info->num_asiento}}">Cancelar</td>
+                            <td><a href="/cancelarreserva/{{$info->id_bus}}/{{$info->num_asiento}}">Cancelar</td>
                         </tr>
                     @endforeach
                 </tbody>

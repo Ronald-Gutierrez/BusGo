@@ -40,14 +40,17 @@
                         <p>Asientos</p>
                         <p id="monto">S/{{$informacion_asientos['monto_input']}}</p>
                     </div>
-                    <form method="GET" action="{{ route('confirmarreserva',$id_viaje) }}">
-                        <input type="hidden" id="monto_input" name="monto_input" value="{{$informacion_asientos['monto_input']}}">
-                        <?php $i=1?>
-                        @while($i < 31)
-                            <input id="asiento{{$i}}" name="asiento{{$i}}" type="hidden" value="{{$informacion_asientos['asiento'.strval($i)]}}">
-                            <?php ++$i?>
+                    <form method="GET" action="{{ route('confirmarreserva',[$id_viaje,$id_bus])}}">
+                        <input type="hidden" id="monto_input" name="monto_input"
+                        value="{{$informacion_asientos['monto_input']}}">
+                        <?php $i = 0 ?>
+                        @while ($i < $capacidad)
+                            <input id="asiento{{$i+1}}" name="asiento{{$i+1}}"
+                            type="hidden" value="{{$informacion_asientos['asiento'.strval($i+1)]}}">
+                            <?php ++$i ?>
                         @endwhile
-                        <button type="submit" class="button-reservar" style="font-size: 20px; width: 400px; height: 50px;">Continuar</button>
+                        <button type="submit" class="button-reservar"
+                        style="font-size: 20px; width: 400px; height: 50px;">Continuar</button>
                     </form>
                 </div>
             </div>
@@ -58,20 +61,27 @@
                     <div class="form-group">
                         <label class="form-label">Nombre del Cliente</label>
                         <div class="form-value">
-                            <span class="form-text" style="font-size: 18px; font-weight: bold;">{{ Auth::user()->name }}</span>
+                            <span class="form-text" style="font-size: 18px; font-weight: bold;">
+                                {{ Auth::user()->name }}
+                            </span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Correo del Cliente</label>
                         <div class="form-value">
-                            <span class="form-text" style="font-size: 18px; font-weight: bold;">{{ Auth::user()->email }}</span>
+                            <span class="form-text" style="font-size: 18px; font-weight: bold;">
+                                {{ Auth::user()->email }}
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="terminos-condiciones">
                     <input type="checkbox" id="terminos" name="terminos" class="terminos-checkbox">
                     <label for="terminos" style="font-size: 18px; font-weight: bold;">
-                        Acepto los <a href="{{ url('/terminos') }}" id="terminos-link" style="font-size: 18px; font-weight: bold;">Términos y Condiciones</a>
+                        Acepto los <a href="{{ url('/terminos') }}" id="terminos-link"
+                            style="font-size: 18px; font-weight: bold;">
+                            Términos y Condiciones
+                        </a>
                     </label>
                 </div>
             </div>
@@ -91,7 +101,8 @@
                         icon: 'error',
                         confirmButtonText: 'Aceptar',
                         didClose: () => {
-                            $('.terminos-checkbox').prop('checked', true); // Marca automáticamente el checkbox al cerrar la alerta
+                            $('.terminos-checkbox').prop('checked', true);
+                            // Marca automáticamente el checkbox al cerrar la alerta
                         }
                     });
                 }

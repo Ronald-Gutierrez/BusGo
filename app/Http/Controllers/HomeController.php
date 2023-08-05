@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Business;
 use App\Models\Rutum;
-use App\Models\Cliente;
 
 class HomeController extends Controller
 {
@@ -50,11 +49,10 @@ class HomeController extends Controller
      */
     public function index(){
         if(Route::has('login')){
-            $idusuario = Auth::id();
-            $result = Business::firstwhere('id_usuario',$idusuario);
+            $result = Business::firstwhere('id_usuario', Auth::id());
             if($result == null){
                 $datos = Rutum::join('viajes','ruta.id_ruta','=','viajes.id_ruta');
-                $datos = $datos->where('viajes.estado',1);
+                $datos = $datos->where('viajes.estado','1');
                 $datos = $datos->paginate();
                 return view('home', compact('datos'))
                     ->with('i', (request()->input('page', 1) - 1) * 10);

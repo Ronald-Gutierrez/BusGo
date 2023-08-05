@@ -26,14 +26,16 @@ class ViajeController extends Controller
                 ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
                 ->where('ruta.encargado',Auth::id())
                 ->paginate();
-
         return view('viaje.index', compact('viajes'))
             ->with('i', (request()->input('page', 1) - 1) * $viajes->perPage());
     }
     public function existencia(Request $request){
-        return Viaje::where('fecha_inicio','=',$request['fecha_inicio'])
-                ->where('fecha_retorno','=',$request['fecha_retorno'])
-                ->where('id_ruta',$request['id_ruta'])->count();
+        return Viaje::where('fecha_inicio',$request['fecha_inicio'])
+                ->where('fecha_retorno',$request['fecha_retorno'])
+                ->where('viajes.id_ruta',$request['id_ruta'])
+                ->join('ruta','ruta.id_ruta','=','viajes.id_ruta')
+                ->where('ruta.encargado',Auth::id())
+                ->count();
     }
     public function home()
     {
@@ -62,12 +64,11 @@ class ViajeController extends Controller
      */
     public function store(Request $request)
     {
-        $request['estado'] = 0;
+        $request['estado'] = '0';
         $request->validate(Viaje::$rules);
-        if($this->existencia($request) > 0){
+        if($this->existencia($request)){
             return redirect()->route('viajes.create')
-                ->with('fail',
-                'Error, ya hay uno o más viajes exactamente igual. '.strval($this->existencia($request)));
+                ->with('fail','Error, ya hay uno o más viajes exactamente igual.');
         }
         else{
             Viaje::create($request->all());
@@ -111,6 +112,7 @@ class ViajeController extends Controller
      */
     public function update(Request $request, Viaje $viaje)
     {
+        $request['estado'] = $viaje->estado;
         $request->validate(Viaje::$rules);
         if($this->existencia($request)){
             return redirect()->route('viajes.edit',$viaje['id_viaje'])
@@ -131,9 +133,10 @@ class ViajeController extends Controller
      */
     public function destroy($id)
     {
-        $busesasignados = Bus::where('id_viaje',$id);
-        if(0 < $busesasignados->count()){
-            $busesasignados->delete();
+        $busesasignados = Bus::where('id_viaje',$id)->count();
+        if($busesasignados){
+            return redirect()->route('viajes.index')
+            ->with('fail', 'Se requieren eliminar algunos buses antes ('.strval($busesasignados).')');
         }
         Viaje::find($id)->delete();
         return redirect()->route('viajes.index')
