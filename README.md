@@ -108,14 +108,6 @@ composer install
 npm install
 ```
 
-### Configurar Entorno
-
-La configuración del entorno se hace en el archivo **.env** pero esé archivo no se puede versionar según las restricciones del archivo **.gitignore**, igualmente en el proyecto hay un archivo de ejemplo  **.env.example** debemos copiarlo con el siguiente comando:
-
-```bash
-cp .env.example .env
-```
-
 Luego es necesario modificar los valores de las variables de entorno para adecuar la configuración a nuestro entorno de desarrollo, por ejemplo los parámetros de conexión a la base de datos.
 
 ### Generar Clave de Seguridad de la Aplicación
@@ -245,14 +237,66 @@ Pagina de seleccion de destinos
 Pagina de reserva de asiento
 
 ![reserva_1](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/20309391-99a1-48fe-a481-332fc0e0502d)
+# **Generación de Casos de Prueba - Caja Negra**
+
+## EMPRESA
+### *Casos Válidos*
+* Registarse/Ingresar como Empresa.
+* La empresa podra crear/modificar/eliminar Rutas (Se elimina en cascada).
+* La empresa podra crear/modificar/eliminar Viajes (Se elimina en cascada).
+* La empresa podra crear/modificar/eliminar Buses.
+* La empresa podra asignar un viaje a una ruta.
+* La empresa podra asignar un bus a una viaje.
+### *Casos no Válidos*
+* La empresa no podra crear viajes repetidos.
+* La empresa no podra crear una rutas dos veces con las mismas caracteristicas.
+* La empresa no podra asignar un bus sino hay una ruta y viaje disponible.
+
+| ID |  Clase | Tipo de Clase| Valores de Prueba| Resultado Esperado |
+|----|-----------|-----------|-----------|-----------|
+| 1  | Registarse/Ingresar como Empresa   | Válido | Nombre: Bus-Paraiso, Correo: busparaiso@gmail.com, Tipo de usuario: Emprea, RUC: 20844473611, Contraseña: bus@parso, Confirmar Contraseña: bus@parso   | Ingreso al menu de Empresa  |
+| 2  | Crear un ruta   | Válido | - Origen: Arequipa - Destino: Lima    | Creación del ruta exitoso - muestra en la pantalla   |      
+| 3  | Crear una viaje   | Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima   | Creación de la viaje exitoso - muestra en la pantalla  |
+| 4  | Crear un bus  | Válido | Placa: 3422, Capacidad: 40, Estado: Activo, Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Creación del bus  exitoso - muestra en la pantalla  |
+| 5  | Asignar viaje a una ruta  | Válido | Ruta_ Arequipa - Lima  | Asignación de la ruta - muestra en la pantalla  |
+| 6  | Asignar un bus a un viaje  | Válido | Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Asignación del bus - muestra en la pantalla  |
+| 7  | Crear viaje repetido  | No Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima | Alerta de Error - muestra en la pantalla  |
+| 8  | Crear una rutas dos veces con las mismas caracteristicas |  No Válido  | Ruta_ Arequipa - Lima  | Alerta de Error - muestra en la pantalla |
+| 9  | Crear y Asignar bus sin viajes ni rutas  | No Válido | - Origen: null - Destino: null - Fecha Inicio: null23, Fecha Retorno: null,  | Alerta de Error - muestra en la pantalla  |
+
+## Usuario
+### *Casos Válidos*
+* El usuario pordra registrarse/ingresar como cliente
+* El usuario podra hacer la busqueda de un viaje disponible.
+* El usuario podra seleccionar un asiento para reservarlo.
+* El usuario podra cancelar su reserva de asiento.
+### *Casos no Válidos*
+* El usuario no podra avanzar a la pestaña confirmar datos, si no a seleccionado minimo un asiento.
+* El usuario no podra avanzar a la pesataña de confirmar reserva, si no a aceptado los terminos y condiciones.
+
+
+| ID |  Clase | Tipo de Clase| Valores de Prueba| Resultado Esperado |
+|----|-----------|-----------|-----------|-----------|
+| 1  | Registrarse/ingresar como cliente  | Válido | Nombre: Pedro Aguilar, Correo: paguilar@gmail.com, Tipo de usuario: Cliente, Contraseña: pe@aguilar, Confirmar Contraseña: pe@aguilar  | Ingreso al menu de Cliente  |
+| 2  | Busqueda de un viaje disponible    | Válido | Origen: Arequia, Destino: Lima: Fecha de viaje: 23/07/2023, Fecha de regreso: null    | Se muestran todos los viajes de las diferentes empresas, segun la busqueda   |      
+| 3  | Seleccionar un asiento para reservarlo  | Válido | Seleccion de asiento: 12,34,56   | Muestra el monto de cada asiento y el total  |
+| 4  | Cancelar su reserva de asiento | Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Origen: Arequipa, Destino: Lima, Número de Asiento: 12,34,56   | Se cancela la reserva y desaparece del apartado "Ver reservas"  |
+| 5  |  Confimar datos, sin seleccion de asientos  | No Válido |  Seleccion de asiento: null | Aparece un mensaje de que no selecciono ningun asiento y se redirige a la misma pestaña  |
+| 6  | Comfimar datos, sin seleccion de Términos y Condiciones  | No Válido | Términos y condiciones: checkNull   | Aparece una alerta, donde te dice que aceptes los Términos y Condiciones  |
+
+
 # **Pruebas Unitarias**
 
 ## Test de Usuario, Cliente y Empresa
 ![test_user](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/test_user.jpg)
 ## Test de Ruta, Crear, editar y eliminar
 ![test_ruta](https://github.com/Ronald-Gutierrez/BusGo/blob/main/Desarrollo/test_ruta.jpg)
-## Test de Viaje, Crear, editar y eliminar
-## Test de Bus, Crear, editar y eliminar
+
+
+# **Analisis con SonarQube**
+
+![image](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03e57cd5-1c0e-44f0-8361-9cc4b770efd6)
+
 
 # **Estilos de Programación**
 
