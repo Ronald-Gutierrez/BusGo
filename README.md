@@ -245,8 +245,8 @@ Pagina de reserva de asiento
 * La empresa podra crear/modificar/eliminar Rutas (Se elimina en cascada).
 * La empresa podra crear/modificar/eliminar Viajes (Se elimina en cascada).
 * La empresa podra crear/modificar/eliminar Buses.
-* La empresa podra asignar un viaje a una ruta.
-* La empresa podra asignar un bus a una viaje.
+* La empresa podra asignar un viaje a una ruta. (Puede asignar mas de un viaje a una ruta)
+* La empresa podra asignar un bus a una viaje. (Puede asignar mas de un bus a un viaje)
 ### *Casos no Válidos*
 * La empresa no podra crear viajes repetidos.
 * La empresa no podra crear una rutas dos veces con las mismas caracteristicas.
@@ -268,7 +268,7 @@ Pagina de reserva de asiento
 ### *Casos Válidos*
 * El usuario pordra registrarse/ingresar como cliente
 * El usuario podra hacer la busqueda de un viaje disponible.
-* El usuario podra seleccionar un asiento para reservarlo.
+* El usuario podra seleccionar un asiento para reservarlo. (Puede seleccionar "n" asientos de mas de un bus asignado a un viaje)
 * El usuario podra cancelar su reserva de asiento.
 ### *Casos no Válidos*
 * El usuario no podra avanzar a la pestaña confirmar datos, si no a seleccionado minimo un asiento.
