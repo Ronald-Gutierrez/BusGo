@@ -257,7 +257,7 @@ Pagina de reserva de asiento
 | 1  | Registarse/Ingresar como Empresa   | Válido | Nombre: Bus-Paraiso, Correo: busparaiso@gmail.com, Tipo de usuario: Emprea, RUC: 20844473611, Contraseña: bus@parso, Confirmar Contraseña: bus@parso   | Ingreso al menu de Empresa  |
 | 2  | Crear un ruta   | Válido | - Origen: Arequipa - Destino: Lima    | Creación del ruta exitoso - muestra en la pantalla   |      
 | 3  | Crear una viaje   | Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima   | Creación de la viaje exitoso - muestra en la pantalla  |
-| 4  | Crear un bus  | Válido | Placa: 3422, Capacidad: 40, Estado: Activo, Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Creación del bus  exitoso - muestra en la pantalla  |
+| 4  | Crear un bus  | Válido | Placa: CKS-422, Capacidad: 40, Estado: Activo, Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Creación del bus  exitoso - muestra en la pantalla  |
 | 5  | Asignar viaje a una ruta  | Válido | Ruta_ Arequipa - Lima  | Asignación de la ruta - muestra en la pantalla  |
 | 6  | Asignar un bus a un viaje  | Válido | Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Asignación del bus - muestra en la pantalla  |
 | 7  | Crear viaje repetido  | No Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima | Alerta de Error - muestra en la pantalla  |
