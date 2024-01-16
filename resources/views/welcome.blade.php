@@ -120,7 +120,7 @@
                     </div>
                     <div>
                         <h2 class="text-4xl font-bold mb-4">Viajes en autobús en todo el Peru</h2>
-                        <p class="text-gray-800">Reserva boletos de autobús en línea en BusGo y disfruta de una experiencia de viaje conveniente. Explora rutas en varias ciudades y encuentra los mejores precios de boletos. ¡Descubre los beneficios de viajar en BusGo!</p>
+                        <p class="text-gray-800">Reserva boletos de autobús en línea en FastBus y disfruta de una experiencia de viaje conveniente. Explora rutas en varias ciudades y encuentra los mejores precios de boletos. ¡Descubre los beneficios de viajar en FastBus!</p>
                         <a href="/login" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded mt-4 inline-block">Reserva ahora</a>
                     </div>
                 </div>

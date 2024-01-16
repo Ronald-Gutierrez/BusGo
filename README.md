@@ -1,7 +1,7 @@
 
-![Logo_BusGo](https://github.com/Ronald-Gutierrez/BusGo/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
+![Logo_FastBus](https://github.com/Ronald-Gutierrez/FastBus/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
 
-<h1 align="center">BUSGO</h1>
+<h1 align="center">FastBus</h1>
 <h1 align="center">Reserva de pasajes de buses online</h1>
 
 ## Tabla de Contenidos:
@@ -28,14 +28,14 @@ Nuestro proyecto está originalmente pensado para brindar la administracion y ba
 
 ## Propósito del Proyecto
 
-BusGO busca proporcionar una solución eficiente y conveniente para la compra de boletos de autobús, simplificando el proceso tanto para los usuarios como para las compañías de autobuses. En este contexto tambien el software tiene como posibles metas:<br>
+FastBus busca proporcionar una solución eficiente y conveniente para la compra de boletos de autobús, simplificando el proceso tanto para los usuarios como para las compañías de autobuses. En este contexto tambien el software tiene como posibles metas:<br>
  Facilitar la compra de pasajes: El software puede permitir a los usuarios buscar y reservar pasajes de autobús de manera rápida y sencilla, eliminando la necesidad de hacer filas en las taquillas de las terminales. Esto les ahorraría tiempo y brindaría comodidad al realizar sus transacciones desde cualquier lugar con acceso a Internet.
 
-**a) Mejorar la experiencia del usuario:** BusGO busca ofrecer una interfaz amigable e intuitiva, permitiendo a los usuarios encontrar rápidamente los pasajes que se ajusten a sus necesidades específicas, como horarios, destinos, precios, servicios adicionales, etc.
+**a) Mejorar la experiencia del usuario:** FastBus busca ofrecer una interfaz amigable e intuitiva, permitiendo a los usuarios encontrar rápidamente los pasajes que se ajusten a sus necesidades específicas, como horarios, destinos, precios, servicios adicionales, etc.
 
-**b) Centralizar la información:** BusGO podra integrar los horarios y precios de múltiples compañías de autobuses, brindando a los usuarios una plataforma única desde la cual puedan comparar y elegir entre diferentes opciones. Esto simplificaría el proceso de búsqueda y permitiría una toma de decisiones más informada.
+**b) Centralizar la información:** FastBus podra integrar los horarios y precios de múltiples compañías de autobuses, brindando a los usuarios una plataforma única desde la cual puedan comparar y elegir entre diferentes opciones. Esto simplificaría el proceso de búsqueda y permitiría una toma de decisiones más informada.
 
-**c) Ofrecer servicios adicionales:** Además de la venta de pasajes, BusGO podría proporcionar servicios complementarios, como la reserva de asientos, la emisión de boletos electrónicos, la notificación de cambios en los horarios de los autobuses, la visualización de rutas y paradas, entre otros. Estos servicios adicionales mejorarían la experiencia del usuario y agregarían valor a la plataforma.
+**c) Ofrecer servicios adicionales:** Además de la venta de pasajes, FastBus podría proporcionar servicios complementarios, como la reserva de asientos, la emisión de boletos electrónicos, la notificación de cambios en los horarios de los autobuses, la visualización de rutas y paradas, entre otros. Estos servicios adicionales mejorarían la experiencia del usuario y agregarían valor a la plataforma.
 
 ## Características
 
@@ -90,13 +90,13 @@ BusGO busca proporcionar una solución eficiente y conveniente para la compra de
 ### Clonar el Repositorio de git
 
 ```bash
-git clone https://github.com/Ronald-Gutierrez/BusGo.git
+git clone https://github.com/Ronald-Gutierrez/FastBus.git
 ```
 
 ### Moverse al directorio del proyecto
 
 ```bash
-cd BusGo
+cd FastBus
 ```
 
 ### Descargar Dependencias del Proyecto
@@ -154,7 +154,7 @@ composer require pusher/pusher-php-server
 ## :red_circle: Desarrollo
 
 ### Funcionalidades
-Se escribio los requisitos específicos de BusGO en el siguiente documento, el cual posee los requisitos funcionales(RF) y los requisitos no funcionales(RNF) de este proyecto. [Documentación Requisitos Específicos BusGO](https://docs.google.com/document/d/1-cylmJXhp7sCNWUJFx0uLShQl1hN8ZKIwFM0lp-MjKM/edit).
+Se escribio los requisitos específicos de FastBus en el siguiente documento, el cual posee los requisitos funcionales(RF) y los requisitos no funcionales(RNF) de este proyecto. [Documentación Requisitos Específicos FastBus](https://docs.google.com/document/d/1-cylmJXhp7sCNWUJFx0uLShQl1hN8ZKIwFM0lp-MjKM/edit).
 
 ### Modelo Entidad Relación
 
@@ -344,7 +344,7 @@ En pocas palabras, CRUD resume las funciones requeridas por un usuario para crea
 ## *8. Evitar codigo redundante.* <br>
 
 ### 🔩Planificación de tareas de implementación en la herramienta TRELLO 🔩
-https://trello.com/b/Ojrdhn6C/busgo-is-lll 
+https://trello.com/b/Ojrdhn6C/FastBus-is-lll 
 
 ### 🔩COLABORADORES🔩
 <a href="https://github.com/Ronald-Gutierrez">

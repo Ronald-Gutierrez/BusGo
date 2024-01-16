@@ -46,7 +46,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>BusGo</title>
+        <title>FastBus</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -129,10 +129,10 @@
             <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
             <p class="uppercase tracking-loose w-full"> Deseas Crear Rutas y Viajes</p>
             <h1 class="my-4 text-5xl font-bold leading-tight">
-                Crea tu viaje con BusGo
+                Crea tu viaje con FastBus
             </h1>
             <p class="leading-normal text-2xl mb-8">
-                BusGo es una plataforma que te permite crear tus viajes como empresa.
+                FastBus es una plataforma que te permite crear tus viajes como empresa.
             </p>
             </div>
             <!--Right Col-->

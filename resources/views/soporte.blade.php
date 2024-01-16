@@ -53,7 +53,7 @@
     <div class="container mx-auto py-8">
   <div class="bg-white shadow-lg p-6">
     <h1 class="text-4xl font-bold text-center mb-4">Equipo de Desarrollo</h1>
-    <h4 class="text-xl font-bold">Team BusGo</h4>
+    <h4 class="text-xl font-bold">Team FastBus</h4>
     <p class="mt-4">
       Este proyecto fue desarrollado por los estudiantes de Ciencias de la Computación
       de la UNSA.
