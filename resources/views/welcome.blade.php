@@ -119,8 +119,8 @@
                         <img src="{{ asset('img/busGo.png') }}" alt="Phone" class="h-48 w-auto mx-auto">
                     </div>
                     <div>
-                        <h2 class="text-4xl font-bold mb-4">Viajes en autobús en todo el Peru</h2>
-                        <p class="text-gray-800">Reserva boletos de autobús en línea en FastBus y disfruta de una experiencia de viaje conveniente. Explora rutas en varias ciudades y encuentra los mejores precios de boletos. ¡Descubre los beneficios de viajar en FastBus!</p>
+                        <h2 class="text-4xl font-bold mb-4">Venta de pasajes  Interprovinciales</h2>
+                        <p class="text-gray-800">Reserva tus pasajes en línea con FastBus y disfruta de una experiencia incomparable. Explora rutas en varias ciudades y encuentra los mejores precios de boletos. ¡Descubre los	 beneficios de FastBus!</p>
                         <a href="/login" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded mt-4 inline-block">Reserva ahora</a>
                     </div>
                 </div>
