@@ -1,5 +1,5 @@
 
-##![Logo_FastBus](https://github.com/Ronald-Gutierrez/FastBus/assets/83055437/03cd52c7-a916-45f1-b92d-956a2069c8f9)
+
 
 <h1 align="center">FastBus</h1>
 <h1 align="center">Reserva de pasajes de buses online</h1>
