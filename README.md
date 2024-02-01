@@ -245,8 +245,8 @@ Pagina de reserva de asiento
 * La empresa podra crear/modificar/eliminar Rutas (Se elimina en cascada).
 * La empresa podra crear/modificar/eliminar Viajes (Se elimina en cascada).
 * La empresa podra crear/modificar/eliminar Buses.
-* La empresa podra asignar un viaje a una ruta.
-* La empresa podra asignar un bus a una viaje.
+* La empresa podra asignar un viaje a una ruta. (Puede asignar mas de un viaje a una ruta)
+* La empresa podra asignar un bus a una viaje. (Puede asignar mas de un bus a un viaje)
 ### *Casos no Válidos*
 * La empresa no podra crear viajes repetidos.
 * La empresa no podra crear una rutas dos veces con las mismas caracteristicas.
@@ -257,7 +257,7 @@ Pagina de reserva de asiento
 | 1  | Registarse/Ingresar como Empresa   | Válido | Nombre: Bus-Paraiso, Correo: busparaiso@gmail.com, Tipo de usuario: Emprea, RUC: 20844473611, Contraseña: bus@parso, Confirmar Contraseña: bus@parso   | Ingreso al menu de Empresa  |
 | 2  | Crear un ruta   | Válido | - Origen: Arequipa - Destino: Lima    | Creación del ruta exitoso - muestra en la pantalla   |      
 | 3  | Crear una viaje   | Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima   | Creación de la viaje exitoso - muestra en la pantalla  |
-| 4  | Crear un bus  | Válido | Placa: 3422, Capacidad: 40, Estado: Activo, Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Creación del bus  exitoso - muestra en la pantalla  |
+| 4  | Crear un bus  | Válido | Placa: CKS-422, Capacidad: 40, Estado: Activo, Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Creación del bus  exitoso - muestra en la pantalla  |
 | 5  | Asignar viaje a una ruta  | Válido | Ruta_ Arequipa - Lima  | Asignación de la ruta - muestra en la pantalla  |
 | 6  | Asignar un bus a un viaje  | Válido | Viaje asignado: Fechas: 2023-07-23 - 2023-07-25 ; Ruta: Arequipa - Lima   | Asignación del bus - muestra en la pantalla  |
 | 7  | Crear viaje repetido  | No Válido | - Fecha Inicio: 23/07/2023, Fecha Retorno: 25/07/2023, Ruta: Arequipa - Lima | Alerta de Error - muestra en la pantalla  |
@@ -268,7 +268,7 @@ Pagina de reserva de asiento
 ### *Casos Válidos*
 * El usuario pordra registrarse/ingresar como cliente
 * El usuario podra hacer la busqueda de un viaje disponible.
-* El usuario podra seleccionar un asiento para reservarlo.
+* El usuario podra seleccionar un asiento para reservarlo. (Puede seleccionar "n" asientos de mas de un bus asignado a un viaje)
 * El usuario podra cancelar su reserva de asiento.
 ### *Casos no Válidos*
 * El usuario no podra avanzar a la pestaña confirmar datos, si no a seleccionado minimo un asiento.
