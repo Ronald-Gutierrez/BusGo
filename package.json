@@ -7,7 +7,7 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
-        "axios": "^1.1.2",
+        "axios": "^1.8.2",
         "bootstrap": "^5.2.3",
         "laravel-echo": "^1.15.2",
         "laravel-mix": "^6.0.49",
